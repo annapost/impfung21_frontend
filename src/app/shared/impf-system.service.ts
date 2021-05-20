@@ -14,10 +14,32 @@ export class ImpfSystemService {
       pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
 
-  getSingle(isbn:string):Observable<Impfung>{
-    return this.http.get<Impfung>(`${this.api}/impfungen/${isbn}`).
+  getSingle(id:string):Observable<Impfung>{
+    return this.http.get<Impfung>(`${this.api}/impfungen/${id}`).
       pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
+
+
+  remove(id:Number):Observable<any>{
+    return this.http.delete<Impfung>(`${this.api}/impfung/${id}`).
+      pipe(retry(3)).pipe(catchError(this.errorHandler));
+  }
+
+  create(impfung:Impfung):Observable<any>{
+    return this.http
+      .post(`${this.api}/impfung`, impfung)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
+    update(impfung:Impfung):Observable<any>{
+      return this.http
+        .put(`${this.api}/impfung/${impfung.id}`, impfung)
+        .pipe(retry(3))
+        .pipe(catchError(this.errorHandler));
+  }
+
+
 
   private errorHandler(error: Error | any): Observable<any> { return throwError(error);
 }
