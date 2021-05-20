@@ -10,7 +10,7 @@
   <div class="metadata">
 
     <span *ngFor="let user of impfung.users; last as l">
-      Angemeldete Person(en): {{ user.vorname }} {{ user.nachname }}
+      Angemeldete Person(en): {{ user?.vorname }} {{ user?.nachname }}
       <span *ngIf="!l">,
         </span> 
         </span>

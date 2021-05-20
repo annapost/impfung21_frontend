@@ -14,7 +14,7 @@ export class ImpfListComponent implements OnInit {
   impfungen: Impfung[];
 
   ngOnInit() {
-    //this.impfungen = this.im.getAll();
+    this.im.getAll(). subscribe(res=> this.impfungen = res);
 
   }
 
