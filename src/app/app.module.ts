@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 
 import { ImpfListComponent } from './impf-list/impf-list.component';
+import { ImpfSystemService } from './shared/impf-system.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -14,6 +15,7 @@ import { ImpfListComponent } from './impf-list/impf-list.component';
     HelloComponent, 
     ImpfListComponent 
     ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [ImpfSystemService]
 })
 export class AppModule { }
