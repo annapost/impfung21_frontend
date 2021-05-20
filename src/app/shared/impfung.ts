@@ -1,3 +1,7 @@
+import { User } from "./user";
+import { Impfort } from "./impfort";
+export { Impfort } from "./impfort";
+export { User } from "./user";
 
 
 export class Impfung {
@@ -7,5 +11,8 @@ export class Impfung {
     public max_personen:number, 
     public uhrzeit_start:Time, 
     public uhrzeit_end:Time, 
-    public impfort_id:Impfort){}
+    public impfort_id:number,
+    public impfort:Impfort,
+    public users?:User[]
+    ){}
 }

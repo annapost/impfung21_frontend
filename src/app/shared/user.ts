@@ -14,6 +14,7 @@ export class User {
     public ort:string,
     public password:string,
     public email_verified_at?:Date,
-    public telefon?:string
+    public telefon?:string,
+    public impfung_id?:number
     ){}
 }
