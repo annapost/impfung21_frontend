@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import {Impfung, Impfort, User} from "../shared/impfung";
+import {ImpfSystemService} from '../shared/impf-system.service';
 
 @Component({
   selector: 'im-impf-list',
   templateUrl: './impf-list.component.html',
-  styleUrls: []
+  styles: []
 })
 export class ImpfListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private im: ImpfSystemService) { }
 
-  impfungen: Impfung[];
+  //impfungen: Impfung[];
 
   ngOnInit() {
+    this.impfungen = this.im.getAll();
+
     /*
     this.impfungen = [
     new Impfung(
@@ -44,6 +47,10 @@ export class ImpfListComponent implements OnInit {
             "Veranstaltungszentrum Halle 1a")
     ],)
     ]*/
+  }
+
+  showDetails(impfung: Impfung){
+    //TODO - Seite 41
   }
 
 }
