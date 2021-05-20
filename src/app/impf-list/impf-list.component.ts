@@ -16,7 +16,7 @@ export class ImpfListComponent implements OnInit {
     this.impfungen = [
     new Impfung(
       1,
-      "2021-05-20",
+      "2021-05-29",
         25,
         "14:00:00",
         "17:00:00",
@@ -27,8 +27,21 @@ export class ImpfListComponent implements OnInit {
             "Steinerkirchen",
             "Straße 55",
             "Feuerwehrhaus Tor 2")
-    ],
-    )
+    ],)
+        new Impfung(
+      2,
+      "2021-06-30",
+        120,
+        "08:00:00",
+        "17:00:00",
+        2,
+        [new Impfort(
+            2,
+            4552,
+            "Waldhausen",
+            "Straße 1",
+            "Veranstaltungszentrum Halle 1a")
+    ],)
     ]
   }
 
