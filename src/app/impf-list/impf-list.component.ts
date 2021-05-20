@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-impf-list',
+  selector: 'im-impf-list',
   templateUrl: './impf-list.component.html',
-  styleUrls: ['./impf-list.component.css']
+  styleUrls: []
 })
 export class ImpfListComponent implements OnInit {
 
