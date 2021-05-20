@@ -15,6 +15,7 @@ export class ImpfSystemService {
       pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
 
+/*
   getSingle(id:string):Observable<Impfung>{
     return this.http.get<Impfung>(`${this.api}/impfungen/${id}`).
       pipe(retry(3)).pipe(catchError(this.errorHandler));
@@ -39,11 +40,10 @@ export class ImpfSystemService {
         .pipe(retry(3))
         .pipe(catchError(this.errorHandler));
   }
-
-
+*/
 
   private errorHandler(error: Error | any): Observable<any> { return throwError(error);
-}
+  }
 
 }
 

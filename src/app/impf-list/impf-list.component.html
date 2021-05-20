@@ -3,20 +3,22 @@
   <a *ngFor="let impfung of impfungen" class="item"> 
     
     <div class="content">
-  
-      <div class="header">{{ impfung.datum }}</div>
-      <div class="description"> {{ impfung.uhrzeit_start }
+      <div class="header">
+        {{ impfung.datum }}
+      </div>
     </div> 
+<!--
   <div class="metadata">
-
     <span *ngFor="let user of impfung.users; last as l">
       Angemeldete Person(en): {{ user?.vorname }} {{ user?.nachname }}
       <span *ngIf="!l">,
         </span> 
         </span>
-        </div>
-        <div class="extra">Maximale Anzahl: {{ impfung.max_personen }}
-          </div> 
-        </div>
+  </div>
+  -->
+
+    <div class="extra">Maximale Anzahl: {{ impfung.max_personen }}
+    </div> 
+        
     </a> 
 </div>
