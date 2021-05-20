@@ -9,8 +9,8 @@ export class Impfung {
     public id:number, 
     public datum:Date, 
     public max_personen:number, 
-    public uhrzeit_start:Time, 
-    public uhrzeit_end:Time, 
+    public uhrzeit_start:Date, 
+    public uhrzeit_end:Date, 
     public impfort_id:number,
     public impfort:Impfort,
     public users?:User[]
