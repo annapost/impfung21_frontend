@@ -1,5 +1,5 @@
 <div class="ui middle aligned selection divided list"> 
-  
+  <h1>Impfungen 2021</h1>
   <a *ngFor="let impfung of impfungen" class="item"> 
     
     <div class="content">
@@ -7,15 +7,16 @@
         {{ impfung.datum }}
       </div>
     </div> 
-<!--
+
   <div class="metadata">
+    Angemeldete Person(en):
     <span *ngFor="let user of impfung.users; last as l">
-      Angemeldete Person(en): {{ user?.vorname }} {{ user?.nachname }}
-      <span *ngIf="!l">,
-        </span> 
-        </span>
+       {{ user?.vorname }} {{ user?.nachname }}
+      <br>
+      <span *ngIf="!l">, </span> 
+    </span>
   </div>
-  -->
+
 
     <div class="extra">Maximale Anzahl: {{ impfung.max_personen }}
     </div> 
