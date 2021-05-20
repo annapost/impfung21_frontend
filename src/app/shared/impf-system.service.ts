@@ -9,6 +9,7 @@ export class ImpfSystemService {
   private api = "https://impfung21.s1810456026.student.kwmhgb.at/api";
   constructor(private http:HttpClient) { }
 
+
   getAll():Observable<Array<Impfung>>{
     return this.http.get<Array<Impfung>>(`${this.api}/impfungen`).
       pipe(retry(3)).pipe(catchError(this.errorHandler));
