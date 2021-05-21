@@ -13,6 +13,7 @@ import { ImpfListItemComponent } from './impf-list-item/impf-list-item.component
 import { ImpfDetailsComponent } from './impf-details/impf-details.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   imports:      [ 
@@ -23,7 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [ 
     AppComponent, 
     HelloComponent, 
-    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent 
+    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent 
     ],
   bootstrap:    [ AppComponent ],
   providers: [ImpfSystemService]

@@ -8,7 +8,7 @@ import {ImpfSystemService} from '../shared/impf-system.service';
   styles: []
 })
 export class ImpfListComponent implements OnInit {
-  
+
 
   constructor(private im: ImpfSystemService) { }
 
@@ -18,7 +18,7 @@ export class ImpfListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.im.getAll(). subscribe(res=> this.impfungen = res);
+    this.im.getAll(). subscribe(res => this.impfungen = res);
   }
 
   showDetails(impfung: Impfung){

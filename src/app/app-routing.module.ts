@@ -9,7 +9,9 @@ const routes: Routes = [
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'home', component: HomeComponent },
 { path: 'impfungen', component: ImpfListComponent },
-{ path: 'impfungen/:id', component: ImpfDetailsComponent }
+{ path: 'impfungen/:id', component: ImpfDetailsComponent },
+{ path: 'user/:id', component: ImpfDetailsComponent },
+{ path: 'impfungen/:id', component: ImpfDetailsComponent },
 ];
 
 
