@@ -10,13 +10,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ImpfListComponent } from './impf-list/impf-list.component';
 import { ImpfSystemService } from './shared/impf-system.service';
 import { ImpfListItemComponent } from './impf-list-item/impf-list-item.component';
+import { ImpfDetailsComponent } from './impf-details/impf-details.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule ],
   declarations: [ 
     AppComponent, 
     HelloComponent, 
-    ImpfListComponent, ImpfListItemComponent 
+    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent 
     ],
   bootstrap:    [ AppComponent ],
   providers: [ImpfSystemService]

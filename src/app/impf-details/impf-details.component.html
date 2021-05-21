@@ -1,0 +1,52 @@
+<div class="ui grid" *ngIf="impfung">
+  <div class="four wide column">
+    
+  </div>
+  <div class="twelve wide column">
+    <h1 class="ui header">{{ impfung.datum }}</h1>
+    <h3 class="ui header">{{ impfung.impfort.ort }}</h3>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+      <div class="four wide column">
+        <h4 class="ui header">Angemeldete Personen</h4>
+        <span *ngFor="let user of impfung.users; last as l">
+{{ user.vorname }} {{ user.nachname }}<span *ngIf="!l">,
+</span>
+        </span>
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">Uhrzeit</h4>
+        {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
+      </div>
+      <!--
+      <div class="four wide column">
+        <h4 class="ui header">Erschienen</h4>
+        {{ impfung?.published | date: 'EEEE, dd.MMMM.yyyy'}}
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">Rating</h4>
+        <div class="ui star rating">
+          <i *ngFor="let r of getRating(impfung.rating)" class="yellow star
+icon"></i>
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+  <div class="sixteen wide column">
+    <h3 class="ui header">Location</h3>
+    {{ impfung.impfort.bezeichnung }}
+  </div>
+  
+<!--[routerLink]="'/books'"-->
+  <button  class="ui red button">Zurück zur Übersicht</button>
+  
+  <!--<button *ngIf="authService.isLoggedIn()" class="ui tiny red labeled icon button" (click)="removeBook()"> <i class="remove icon">-->
+    <button class="ui tiny red labeled icon button"> <i class="remove icon">
+  </i>
+    Buch löschen</button>
+
+  <!--<a *ngIf="authService.isLoggedIn()" class="ui tiny yellow labeled icon button" [routerLink]="['../../admin', impfung?.isbn]"> -->
+  <a class="ui tiny yellow labeled icon button">
+    <i class="write icon"></i> Buch bearbeiten
+  </a>
