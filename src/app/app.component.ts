@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import {Impfung} from "./shared/impfung";
 
 @Component({
   selector: 'im-root',
@@ -6,5 +7,9 @@ import { Component, VERSION } from '@angular/core';
   styles: []
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+  listOn = true;
+  detailsOn = false;
+
+  impfung: Impfung;
+  
 }
