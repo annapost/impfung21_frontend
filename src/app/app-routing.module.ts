@@ -10,7 +10,7 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'impfungen', component: ImpfListComponent },
 { path: 'impfungen/:id', component: ImpfDetailsComponent },
-{ path: 'user/:id', component: ImpfDetailsComponent },
+{ path: 'user/:id', component: UserDetailsComponent },
 { path: 'impfungen/:id', component: ImpfDetailsComponent },
 ];
 
