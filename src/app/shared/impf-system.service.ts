@@ -42,7 +42,8 @@ export class ImpfSystemService {
   }
 
 
-  private errorHandler(error: Error | any): Observable<any> { return throwError(error);
+  private errorHandler(error: Error | any): Observable<any> { 
+    return throwError(error);
   }
 
 }
