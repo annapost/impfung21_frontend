@@ -3,10 +3,7 @@ import {Impfung} from "./shared/impfung";
 
 @Component({
   selector: 'im-root',
-  template: `
-  <im-impf-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></im-impf-list>
-  <im-impf-details *ngIf="detailsOn" [impfung]="impfung" (showListEvent)="showList()"></im-impf-details>
-  `,
+  templateUrl: './app.component.html',
   styles: []
 })
 export class AppComponent  {
