@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
   template: `<div class="ui container">
   <h1>Willkommen im Impfsystem von KWM</h1>
   <p>Such dir nach dem Login deinen Impfort</p>
-  <a routerLink='../impfungen/ class='ui red button'>Impfliste anzeigen</a>
+  <a routerLink='../impfungen/' class='ui red button'>Impfliste anzeigen</a><br>
+  LOGIN HIER EINBAUEN statt Button oben!
   </div> `,
   styleUrls: []
 })
