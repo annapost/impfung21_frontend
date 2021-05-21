@@ -39,10 +39,10 @@ icon"></i>
   </div>
   
 <!--[routerLink]="'/books'"-->
-  <button  class="ui red button">Zurück zur Übersicht</button>
+  <button  (click)="showImpfungList()" class="ui red button">Zurück zur Übersicht</button>
   
   <!--<button *ngIf="authService.isLoggedIn()" class="ui tiny red labeled icon button" (click)="removeBook()"> <i class="remove icon">-->
-    <button class="ui tiny red labeled icon button"> <i class="remove icon">
+    <button  class="ui tiny red labeled icon button"> <i class="remove icon">
   </i>
     Buch löschen</button>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Impfung} from "../shared/impfung";
 
 @Component({
@@ -7,8 +7,12 @@ import {Impfung} from "../shared/impfung";
   styleUrls: []
 })
 export class ImpfDetailsComponent{
-  @Input() impfung: Impfung
+  @Input() impfung: Impfung;
+  @Output() showListEvent = new EventEmitter<any>();
 
   
+  showImpfungList(){
+    this.showListEvent.emit();
+  }
 
 }
