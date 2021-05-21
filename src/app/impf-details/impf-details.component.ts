@@ -21,4 +21,10 @@ constructor(
     this.showListEvent.emit();
   }
 
+  ngOnInit() {
+    const params = this.route.snapshot.params; //aktuelle Route wird geholt, 
+    this.im.getSingle(params['id']).subscribe(
+      res => this.impfung = res);
+  }
+
 }

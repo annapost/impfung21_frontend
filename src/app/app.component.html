@@ -3,9 +3,10 @@
 
 <im-impf-details *ngIf="detailsOn" [impfung]="impfung" (showListEvent)="showList()"></im-impf-details>
 -->
-<div class="ui two item tabs menu">
-<a routerLink="home" routerLinkActive="active" class="item">Impfübersicht</a> 
-<a routerLink="impfungen" routerLinkActive="active" class="item">Neue Impfung</a>
+<div class="ui three item tabs menu">
+<a routerLink="home" routerLinkActive="active" class="item">Home</a> 
+<a routerLink="impfungen" routerLinkActive="active" class="item">Impfübersicht</a>
+<a routerLink="impfungen" routerLinkActive="active" class="item">TODO: Neue Impfung</a>
 </div>
 
 <router-outlet></router-outlet>
