@@ -1,0 +1,21 @@
+<div class="content">
+      <div class="header">
+        {{ impfung.datum }}
+        <br>
+        Von {{impfung.uhrzeit_start}} bis
+        {{impfung.uhrzeit_end}
+      </div>
+</div>
+
+    <div class="metadata">
+      Angemeldete Person(en):
+      <span *ngFor="let user of impfung.users; last as l">
+       {{ user?.vorname }} {{ user?.nachname }}
+      <br>
+      <span *ngIf="!l">, </span>
+      </span>
+    </div>
+
+
+    <div class="extra">Maximale Anzahl: {{ impfung.max_personen }}
+  </div>
