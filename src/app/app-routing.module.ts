@@ -9,12 +9,12 @@ const routes: Routes = [
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'home', component: HomeComponent },
 { path: 'impfungen', component: ImpfListComponent },
-{ path: 'impfung/:id', component: ImpfDetailsComponent }
+{ path: 'impfungen/:id', component: ImpfDetailsComponent }
 ];
 
 
 @NgModule({
-imports: [RouterModule.forRoot(routes), AppRoutingModule], 
+imports: [RouterModule.forRoot(routes)], 
 exports: [RouterModule],
 providers: []
 })
