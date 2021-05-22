@@ -33,7 +33,7 @@
       <div class="fields" *ngFor="let control of impforte?.controls; index as i; last as l" [formGroupName]="i">
         <input type="hidden" name="id">
           <div class="menu">
-            <option class="item" data-value="i+1">{{control.ort}}</option>
+            <!--<option class="item" data-value="i+1">{{control.ort}}</option>-->
           </div>
         </div>
       </div>
@@ -41,11 +41,13 @@
   </div>
 
 
-
     <div class="field">
       <label>Maximale Personenanzahl</label>
       <input type="number" formControlName="max_personen">
       <div *ngIf="errors.number" class="ui negative message">{{errors.number}}</div>
+    </div>
+    <div class="fields" *ngIf="impfung.users.length > 0">Es gibt bereits {{impfung.users.length}} angemeldete Personen!
+
     </div>
 
     <button type="submit" class="ui button"
