@@ -4,7 +4,16 @@ export class ImpfFactory {
 
  static empty(): Impfung {
    //legt neue Dummy Impfung an
-   return new Impfung(null, new Date(), 0, new Date(), null, {id: 0, plz: 0, ort: '', strasse: '', bezeichnung: '', new Date()}, []);
+   return new Impfung(
+     null, 
+     new Date(), 
+     0, 
+     new Date(), 
+     new Date(),
+     null, 
+     {id: 0, plz: 0, ort: '', strasse: '', bezeichnung: ''},
+     []
+     );
  }
 
  static fromObject(rawImpfung: any): Impfung {
@@ -15,10 +24,10 @@ export class ImpfFactory {
      rawImpfung.max_personen,
      typeof(rawImpfung.uhrzeit_start) === 'string' ?
         new Date(rawImpfung.uhrzeit_start) : rawImpfung.uhrzeit_start,
+      typeof(rawImpfung.uhrzeit_end) === 'string' ? new Date(rawImpfung.uhrzeit_end) : rawImpfung.uhrzeit_end,
      rawImpfung.impfort_id,
      rawImpfung.impfort,
-     rawImpfung.users,
-     typeof(rawImpfung.uhrzeit_end === 'string' ? new Date(rawImpfung.uhrzeit_end) : rawImpfung.uhrzeit_end
+     rawImpfung.users 
    );
  }
 }
