@@ -49,7 +49,10 @@ export class ImpfFormComponent implements OnInit {
     id: this.impfung.id,
     //formgruppe braucht objekt - wir sagen ihm welche formularfelder dazugehören - Labelnamen aus HTML nehmen
     datum: [this.impfung.datum, Validators.required],
-    uhrzeit_start: this.impfung.uhrzeit_start,
+    uhrzeit_start: [this.impfung.uhrzeit_start, Validators.required],
+    uhrzeit_end: [this.impfung.uhrzeit_end, Validators.required],
+    impforte: Validators.required,
+    max_personen: Validators.required
     /*isbn: [
       this.impfung.id,
       [
