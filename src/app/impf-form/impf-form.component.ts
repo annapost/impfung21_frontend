@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ImpfFactory } from '../shared/impf-factory';
 import { ImpfSystemService } from '../shared/impf-system.service';
 import { Impfung } from '../shared/impfung';
+import { Impfort } from '../shared/impfort';
 
 @Component({
   selector: 'im-impf-form',
@@ -20,6 +21,7 @@ export class ImpfFormComponent implements OnInit {
   //unterscheidung, ob ich bereits ein Buch habe, oder eines neu anlegen will
   isUpdatingImpfung = false;
   errors: { [key: string]: string } = {};
+  impforte: FormArray;
 
   constructor(
     private fb: FormBuilder,
