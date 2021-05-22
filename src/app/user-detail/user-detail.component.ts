@@ -1,6 +1,7 @@
 import {Impfung, Impfort, User} from "../shared/impfung";
 import {ImpfSystemService} from '../shared/impf-system.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'im-user-detail',
@@ -8,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class UserDetailComponent implements OnInit {
+  @Input() user: User;
 
-  constructor() { }
-
-  users: User[];
+  constructor(
+    private im: ImpfSystemService,
+    private route: ActivatedRoute, 
+    private router:Router
+  ) { }
 
   ngOnInit() {
+    const params = this.route.snapshot.params; //aktuelle Route wird geholt, 
+    this.im.getSingle(params['id']).subscribe(
+      res => this.user = res);
   }
 
 }
