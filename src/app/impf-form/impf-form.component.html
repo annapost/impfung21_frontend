@@ -26,7 +26,7 @@ errors.end }}</div>
 
 <div class="field">
 <label>Impfort</label>
-
+<!--
   <div class="ui selection dropdown">
   <input type="hidden" name="gender">
   <i class="dropdown icon"></i>
@@ -35,15 +35,14 @@ errors.end }}</div>
     <div class="item" data-value="impfort.id">{{impfort}}
     </div>
   </div>
-</div>
+</div>  -->
 
 </div>
 
 <div class="field">
 <label>Maximale Personenanzahl</label>
 <input type="number" formControlName="max_personen">
-<div *ngIf="errors.number" class="ui negative message">{{ errors.number
-}}</div>
+<div *ngIf="errors.number" class="ui negative message">{{errors.number}}</div>
 </div>
 
 <button type="submit" class="ui button"
