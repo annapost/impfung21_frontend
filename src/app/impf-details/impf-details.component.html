@@ -1,21 +1,21 @@
 <div class="ui grid" *ngIf="impfung">
 
   <div class="twelve wide column">
-    <h1 class="ui header">{{ impfung.datum }}</h1>
-    <h3 class="ui header">Impfort einfügen</h3>
+    <h1 class="ui header">{{impfung.impfort.ort}}</h1>
+    <h3 class="ui header">Datum: {{impfung.datum}}</h3>
+    <h4 class="ui header">Uhrzeit</h4>
+        {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
     <div class="ui divider"></div>
     <div class="ui grid">
       <div class="six wide column">
         <h4 class="ui header">Angemeldete Personen</h4>
+      </div>
+      <div class="six wide column">
         <span *ngFor="let user of impfung.users; last as l">
 {{ user.vorname }} {{ user.nachname }}
 <span *ngIf="!l">,
 </span>
         </span>
-      </div>
-      <div class="six wide column">
-        <h4 class="ui header">Uhrzeit</h4>
-        {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
       </div>
       <!--
       <div class="four wide column">
