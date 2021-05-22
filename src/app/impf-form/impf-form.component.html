@@ -1,3 +1,51 @@
-<p>
-impf-form works!
-</p>
+<h1>Impfformular</h1>
+
+<form class="ui large form" [formGroup]="impfForm"
+(ngSubmit)="submitForm()">
+
+<input type="hidden" name="id">
+
+<div class="field">
+<label>Datum</label>
+<input type="date" formControlName="datum">
+</div>
+
+<div class="field">
+<label>Startuhrzeit</label>
+<input formControlName="uhrzeit_start">
+<div *ngIf="errors.start" class="ui negative message">{{ errors.start }}
+</div>
+</div>
+
+
+<div class="field">
+<label>Enduhrzeit</label>
+<input type="end" formControlName="uhrzeit_end">
+<div *ngIf="errors.end" class="ui negative message">{{
+errors.published }}</div>
+</div>
+
+<div class="field">
+<label>Impfort</label>
+<!--
+  <div class="ui selection dropdown">
+  <input type="hidden" name="gender">
+  <i class="dropdown icon"></i>
+  <div class="menu">
+    <span *ngFor="let impfort of impforte">
+    <div class="item" data-value="impfort.id">{{impfort}}</div>
+  </div>
+</div>
+-->
+</div>
+
+<div class="field">
+<label>Maximale Personenanzahl</label>
+<input type="number" formControlName="max_personen">
+<div *ngIf="errors.number" class="ui negative message">{{ errors.number
+}}</div>
+</div>
+
+<button type="submit" class="ui button"
+[disabled]="impfForm.invalid">Speichern</button>
+</form>

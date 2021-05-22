@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'im-impf-form',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class ImpfFormComponent implements OnInit {
+  impfForm: FormGroup;
 
   constructor() { }
 
