@@ -58,18 +58,6 @@ export class ImpfFormComponent implements OnInit {
     max_personen: [
       Validators.required,
       Validators.min(this.impfung.users.length),]
-    /*isbn: [
-      this.impfung.id,
-      [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(13)
-      ]
-    ],*/
-    /*description: this.impfung.description,
-    rating: [this.impfung.rating, [Validators.min(0), Validators.max(10)]],
-    published: this.impfung.published,
-    images: this.images*/
   });
   //validator immer aktuell halten:
   this.impfForm.statusChanges.subscribe(() => {
