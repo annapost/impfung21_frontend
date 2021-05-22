@@ -13,8 +13,8 @@ const routes: Routes = [
 { path: 'impfungen', component: ImpfListComponent },
 { path: 'impfungen/:id', component: ImpfDetailsComponent },
 { path: 'user/:id', component: UserDetailComponent },
-{ path: 'admin', component: ImpfFormComponent },
-{ path: 'admin/:id', component: ImpfFormComponent },
+{ path: 'admin', component: ImpfFormComponent }, //neuanlage Impfunugen
+{ path: 'admin/:id', component: ImpfFormComponent }, //bearbeiten von Impfungen
 ];
 
 
