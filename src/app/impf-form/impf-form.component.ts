@@ -85,9 +85,9 @@ export class ImpfFormComponent implements OnInit {
     console.log(this.impfForm.value);
 
     //fitlers null values
-    this.impfForm.value.images = this.impfForm.value.images.filter(
+   /* this.impfForm.value.images = this.impfForm.value.images.filter(
       thumbnail => thumbnail.url
-    );
+    );*/
 
     const updatedImpfung: Impfung = ImpfFactory.fromObject(this.impfForm.value);
     console.log(updatedImpfung);
