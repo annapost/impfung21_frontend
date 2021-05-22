@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -14,17 +14,19 @@ import { ImpfDetailsComponent } from './impf-details/impf-details.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ImpfFormComponent } from './impf-form/impf-form.component';
 
 @NgModule({
   imports:      [ 
     BrowserModule, 
     FormsModule, 
     HttpClientModule,
-    AppRoutingModule],
+    AppRoutingModule,
+    ReactiveFormsModule],
   declarations: [ 
     AppComponent, 
     HelloComponent, 
-    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent 
+    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent 
     ],
   bootstrap:    [ AppComponent ],
   providers: [ImpfSystemService]
