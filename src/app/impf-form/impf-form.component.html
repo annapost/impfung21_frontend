@@ -11,14 +11,14 @@
 
   <div class="field">
     <label>Startuhrzeit</label>
-    <input formControlName="uhrzeit_start">
+    <input type="time" formControlName="uhrzeit_start">
     <div *ngIf="errors.start" class="ui negative message">{{ errors.start }}
     </div>
   </div>
 
   <div class="field">
     <label>Enduhrzeit</label>
-    <input formControlName="uhrzeit_end">
+    <input type="time" formControlName="uhrzeit_end">
     <div *ngIf="errors.end" class="ui negative message">{{
       errors.end }}</div>
   </div>
@@ -33,7 +33,7 @@
       <div class="fields" *ngFor="let control of impforte?.controls; index as i; last as l" [formGroupName]="i">
         <input type="hidden" name="id">
           <div class="menu">
-            <option class="item" data-value="i+1">{{control}}</option>
+            <option class="item" data-value="i+1">{{control.ort}}</option>
           </div>
         </div>
       </div>
