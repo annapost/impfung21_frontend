@@ -8,8 +8,11 @@
     <div class="ui divider"></div>
     <div class="ui grid">
       <div class="six wide column">
-        <h4 class="ui header">Angemeldete Personen</h4>
-         <i class="circular users icon"></i>
+        <h5 class="ui header">
+  <i class="users icon"></i>
+  <div class="content"> Angemeldete Personen </div>
+</h5>
+         
       </div>
       <div class="six wide column">
         <span *ngFor="let user of impfung.users; last as l">
