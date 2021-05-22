@@ -17,26 +17,26 @@
 </div>
 </div>
 
-
 <div class="field">
 <label>Enduhrzeit</label>
 <input type="end" formControlName="uhrzeit_end">
 <div *ngIf="errors.end" class="ui negative message">{{
-errors.published }}</div>
+errors.end }}</div>
 </div>
 
 <div class="field">
 <label>Impfort</label>
-<!--
+
   <div class="ui selection dropdown">
   <input type="hidden" name="gender">
   <i class="dropdown icon"></i>
   <div class="menu">
     <span *ngFor="let impfort of impforte">
-    <div class="item" data-value="impfort.id">{{impfort}}</div>
+    <div class="item" data-value="impfort.id">{{impfort}}
+    </div>
   </div>
 </div>
--->
+
 </div>
 
 <div class="field">

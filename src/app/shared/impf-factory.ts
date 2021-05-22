@@ -24,7 +24,7 @@ export class ImpfFactory {
      rawImpfung.max_personen,
      typeof(rawImpfung.uhrzeit_start) === 'string' ?
         new Date(rawImpfung.uhrzeit_start) : rawImpfung.uhrzeit_start,
-      typeof(rawImpfung.uhrzeit_end) === 'string' ? new Date(rawImpfung.uhrzeit_end) : rawImpfung.uhrzeit_end,
+    typeof(rawImpfung.uhrzeit_end) === 'string' ? new Date(rawImpfung.uhrzeit_end) : rawImpfung.uhrzeit_end,
      rawImpfung.impfort_id,
      rawImpfung.impfort,
      rawImpfung.users 
