@@ -2,61 +2,41 @@
 
 <form class="ui large form" [formGroup]="impfForm"
 (ngSubmit)="submitForm()">
+
 <input type="hidden" name="id">
-<div class="field">
-<label>Ort</label>
-<input formControlName="ort">
-<div *ngIf="errors.ort" class="ui negative message"> {{ errors.ort
-}} </div>
-</div>
+
 <div class="field">
 <label>Datum</label>
 <input type="date" formControlName="datum">
 </div>
 
-<div class="field" [class.disabled]="isUpdatingBook">
+<div class="field">
 <label>Startuhrzeit</label>
-<input formControlName="start">
-<div *ngIf="errors.isbn" class="ui negative message">{{ errors.start }}
+<input formControlName="uhrzeit_start">
+<div *ngIf="errors.start" class="ui negative message">{{ errors.start }}
 </div>
 </div>
+
+
 <div class="field">
 <label>Enduhrzeit</label>
-<input type="end" formControlName="end">
+<input type="end" formControlName="uhrzeit_end">
 <div *ngIf="errors.end" class="ui negative message">{{
 errors.published }}</div>
 </div>
+
 <div class="field">
-<label>Beschreibung</label>
-<textarea formControlName="description" rows="3"></textarea>
+<label>Impfort</label>
+
 </div>
+
 <div class="field">
-<label>Rating</label>
-<input type="number" formControlName="rating">
-<div *ngIf="errors.rating" class="ui negative message">{{ errors.rating
+<label>Maximale Personenanzahl</label>
+<input type="number" formControlName="max_personen">
+<div *ngIf="errors.number" class="ui negative message">{{ errors.number
 }}</div>
 </div>
-<div class="field">
-<label>Bilder</label>
-<div formArrayName="images">
-<div class="fields" *ngFor="let control of images?.controls; index as
-i; last as l" [formGroupName]="i">
-<input type="hidden" name="id">
-<div class="nine wide field">
-<input formControlName="url" placeholder="http://bild{{i+1}}_url">
-</div>
-<div class="six wide field">
-<input formControlName="title" placeholder="Bild{{i+1}}_Titel">
-</div>
-<div class="one wide field" *ngIf="l">
-<button (click)="addThumbnailControl()" class="ui large button"
-type="button">+</button>
-</div>
-</div>
-</div>
-<div *ngIf="errors.images" class="ui negative message">{{ errors.images
-}}</div>
-</div>
+
 <button type="submit" class="ui button"
 [disabled]="impfForm.invalid">Speichern</button>
 </form>

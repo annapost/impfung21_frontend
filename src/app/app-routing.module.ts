@@ -4,7 +4,7 @@ import { ImpfDetailsComponent } from './impf-details/impf-details.component';
 import { ImpfListComponent } from './impf-list/impf-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';  
 import { HomeComponent } from './home/home.component';
-import { ImpfFormComponent } from './impf-form/impf-form.component';
+import { ImpfFormComponent } from './impf-form/impf-form.component'; 
 
 
 const routes: Routes = [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-impf-form',
+  selector: 'im-impf-form',
   templateUrl: './impf-form.component.html',
   styleUrls: []
 })
