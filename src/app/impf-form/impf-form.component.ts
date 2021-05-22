@@ -52,7 +52,7 @@ export class ImpfFormComponent implements OnInit {
     uhrzeit_start: [
       this.impfung.uhrzeit_start, 
       Validators.required,
-      Validators.max(this.impfung.uhrzeit_end)],
+      ],
     uhrzeit_end: [this.impfung.uhrzeit_end, Validators.required],
     impforte: Validators.required,
     max_personen: [
