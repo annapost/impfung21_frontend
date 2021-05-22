@@ -1,8 +1,9 @@
 <h1>Impfungen 2021</h1>
 
 <div class="ui middle aligned selection divided list">
-
-  <a *ngFor="let impfung of impfungen" class="item im-impf-list-item" [impfung]="impfung">
+  <a *ngFor="let impfung of impfungen" class="item im-impf-list-item" [impfung]="impfung" [routerLink]="impfung.id">
   </a>
+  <div class="ui large text loader">Einen Moment! Die Daten werden geladen!</div>
+  <p *ngIf="impfungen && !impfungen.length">Aktuell gibt es keine eingetragenen Impfungen</p>
 
 </div>

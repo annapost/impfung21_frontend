@@ -26,5 +26,15 @@ constructor(
     this.im.getSingle(params['id']).subscribe(
       res => this.impfung = res);
   }
+  
+  removeImpfung() {
+    if (confirm('Diese Impfung wirklich löschen?')) {
+      this.im.remove(this.impfung.id)
+      .subscribe(res => this.router.navigate(['../'], 
+      { 
+        relativeTo: this.route 
+        })); 
+        }
+    }
 
 }
