@@ -1,19 +1,18 @@
 <div class="content">
       <div class="header">
-        {{ impfung.datum }}
+        <span class="ui medium header">{{impfung.impfort.ort}}</span>
         <br>
+        <b>Datum: </b> {{impfung.datum}}
         Von {{impfung.uhrzeit_start}} bis
         {{impfung.uhrzeit_end}
       </div>
 </div>
 
     <div class="metadata">
-      Angemeldete Person(en):
-      <span *ngFor="let user of impfung.users; last as l">
-       {{ user?.vorname }} {{ user?.nachname }}
+
+      Angemeldet:
+      {{impfung.users.length}} Person(en)
       <br>
-      <span *ngIf="!l">, </span>
-      </span>
     </div>
 
 
