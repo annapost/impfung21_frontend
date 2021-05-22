@@ -109,7 +109,7 @@ export class ImpfFormComponent implements OnInit {
       });
     } else {
       this.bs.create(updatedImpfung).subscribe(res => {
-        this.router.navigate(["../impfungem"], { relativeTo: this.route });
+        this.router.navigate(["../impfungen"], { relativeTo: this.route });
       });
     }
   }
