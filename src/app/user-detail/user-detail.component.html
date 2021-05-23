@@ -17,11 +17,11 @@
         <ng-template #thenBlock><span class="ui orange small header">Nicht geimpft! </span></ng-template>
         <ng-template #elseBlock><span class="ui olive small header">Bereits geimpft!</span> </ng-template>
       </div>
-      <div class="two wide column">
+      <div class="six wide column">
         <div *ngIf="user.impfung_id; then thenBlockAngemeldet else elseBlockOffen"></div>
-        <ng-template #thenBlockAngemeldet> Bereits zur Impfung angemeldet!
+        <ng-template #thenBlockAngemeldet> <span class="ui olive small header">Angemeldet</span>
         </ng-template>
-        <ng-template #elseBlockOffen> nicht angemeldet!
+        <ng-template #elseBlockOffen>
           <a class="ui labeled teal icon button" >
             <!--[routerLink]="['./user', impfung?.id]"-->
           Anmelden</a> 
