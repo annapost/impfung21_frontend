@@ -1,6 +1,5 @@
 <div class="ui grid" *ngIf="impfung">
 
-<!--
   <div class="twelve wide column">
     <h1 class="ui header">{{impfung.impfort.ort}}</h1>
     <h3 class="ui header">Datum: {{impfung.datum}}</h3>
@@ -10,7 +9,7 @@
 
     </div>
     <div class="ui grid">
-      <div class="six wide column">
+      <div class="four wide column">
         <h5 class="ui header">
           <i class="users icon"></i>
           <div class="content"> Angemeldete Personen 
@@ -18,18 +17,21 @@
           </div>
         </h5>
 
-      </div>-->
-      <div class="six wide column">
+      </div>
+      <div class="eight wide column">
         <span *ngFor="let user of impfung.users; last as l">
-          {{ user.vorname }} {{ user.nachname }} 
-          
-          <span *ngIf="!l">,
-<!--
-        Geimpft:
-        <input type="checkbox" [(ngModel)]="user.status==='yes'">
-        <label for="status">
-                  </span>
+              {{ user.vorname }} {{ user.nachname }} 
+              <div class="four wide column">
+                  Geimpft:
+                <div class="ui toggle checkbox">
+                  <input type="checkbox" id="status" >
+                  <label for="status"></label>
+                  </div>
+                </div> <br>
+              
+              <span *ngIf="!l">,</span>
         </span>
+      </div>
 
 
       </div>
@@ -43,7 +45,7 @@
     </p>
   </div>
 
-</div>
+
 
   <button [routerLink]="'/impfungen'" (click)="showImpfungList()" class="ui teal button">Zurück zur Übersicht</button>
 
@@ -52,9 +54,8 @@
     <i class="write icon"></i> Impfung bearbeiten
   </a>
 
-  <button (click)="removeImpfung()" class="ui tiny red labeled icon button"> 
+  <button (click)="removeImpfung()" class="ui red labeled icon button"> 
     <i class="remove icon"></i>
     Impfung löschen
     </button>
 
--->
