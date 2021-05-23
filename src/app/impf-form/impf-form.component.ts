@@ -22,6 +22,7 @@ export class ImpfFormComponent implements OnInit {
   isUpdatingImpfung = false;
   errors: { [key: string]: string } = {};
   impforte: FormArray;
+  //impfort-data: SERVICE ANLAGEN getAllOrte();
 
   constructor(
     private fb: FormBuilder,
@@ -37,6 +38,7 @@ export class ImpfFormComponent implements OnInit {
       this.bs.getSingle(isbn).subscribe(impfung => {
         this.impfung = impfung;
         this.initImpfung();
+        
       });
     }
     this.initImpfung();

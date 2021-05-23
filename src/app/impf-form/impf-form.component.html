@@ -23,6 +23,7 @@
       errors.end }}</div>
   </div>
 
+<!--UMBAUEN auf einzelne Eingabefelder-->
   <div class="field">
     <label>Impforte</label>
     <div formArrayName="impforte">
@@ -33,6 +34,7 @@
       <div class="fields" *ngFor="let control of impforte?.controls; index as i; last as l" [formGroupName]="i">
         <input type="hidden" name="id">
           <div class="menu">
+
             <!--<option class="item" data-value="i+1">{{control.ort}}</option>-->
           </div>
         </div>

@@ -6,7 +6,7 @@ export { User } from "./user";
 
 export class Impfung {
   constructor (
-    public id:an, 
+    public id:any, 
     public datum:Date, 
     public max_personen:number, 
     public uhrzeit_start:Date, 
