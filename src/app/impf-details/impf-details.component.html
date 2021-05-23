@@ -1,29 +1,41 @@
 <div class="ui grid" *ngIf="impfung">
 
+<!--
   <div class="twelve wide column">
     <h1 class="ui header">{{impfung.impfort.ort}}</h1>
     <h3 class="ui header">Datum: {{impfung.datum}}</h3>
     <h4 class="ui header">Uhrzeit</h4>
-        {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
-    <div class="ui divider"></div>
+    {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
+    <div class="ui divider">
+
+    </div>
     <div class="ui grid">
       <div class="six wide column">
         <h5 class="ui header">
-  <i class="users icon"></i>
-  <div class="content"> Angemeldete Personen </div>
-</h5>
-         
-      </div>
+          <i class="users icon"></i>
+          <div class="content"> Angemeldete Personen 
+
+          </div>
+        </h5>
+
+      </div>-->
       <div class="six wide column">
         <span *ngFor="let user of impfung.users; last as l">
-{{ user.vorname }} {{ user.nachname }}
-<span *ngIf="!l">,
-</span>
+          {{ user.vorname }} {{ user.nachname }} 
+          
+          <span *ngIf="!l">,
+<!--
+        Geimpft:
+        <input type="checkbox" [(ngModel)]="user.status==='yes'">
+        <label for="status">
+                  </span>
         </span>
-      </div>
 
+
+      </div>
     </div>
   </div>
+
   <div class="sixteen wide column">
     <h3 class="ui header">Location</h3>
     <p>{{impfung.impfort.plz}} {{impfung.impfort.ort}}<br>
@@ -31,15 +43,18 @@
     </p>
   </div>
 
+</div>
+
   <button [routerLink]="'/impfungen'" (click)="showImpfungList()" class="ui teal button">Zurück zur Übersicht</button>
 
-    <!--<a *ngIf="authService.isLoggedIn()" class="ui tiny yellow labeled icon button" [routerLink]="['../../admin', impfung?.isbn]"> -->
+
   <a class="ui yellow labeled icon button" [routerLink]="['../../admin', impfung?.id]">
     <i class="write icon"></i> Impfung bearbeiten
   </a>
 
-  <!--<button *ngIf="authService.isLoggedIn()" class="ui tiny red labeled icon button" (click)="removeBook()"> <i class="remove icon">-->
-  <button (click)="removeImpfung()" class="ui tiny red labeled icon button"> <i class="remove icon">
-  </i>
-    Impfung löschen</button>
+  <button (click)="removeImpfung()" class="ui tiny red labeled icon button"> 
+    <i class="remove icon"></i>
+    Impfung löschen
+    </button>
 
+-->

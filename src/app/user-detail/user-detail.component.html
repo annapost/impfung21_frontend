@@ -14,7 +14,7 @@
         <h4 class="ui header">Dein persönlicher Impfstatus: </h4>-->
         
 
-<div *ngIf="user.status === 'n'; then thenBlock else elseBlock"></div>
+<div *ngIf="user.status === 'no'; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>Du kannst dich noch für eine Impfung anmelden! Status: NO.</ng-template>
 <ng-template #elseBlock>YES.</ng-template>
 
