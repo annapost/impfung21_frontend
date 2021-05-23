@@ -19,7 +19,7 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     const params = this.route.snapshot.params; //aktuelle Route wird geholt, 
-    this.im.getUs(params['id']).subscribe(
+    this.im.getUser(params['id']).subscribe(
       res => this.user = res);
   }
 
