@@ -21,6 +21,7 @@ export class UserDetailComponent implements OnInit {
     const params = this.route.snapshot.params; //aktuelle Route wird geholt, 
     this.im.getUser(params['id']).subscribe(
       res => this.user = res);
+      console.log(this.user);
   }
 
 }

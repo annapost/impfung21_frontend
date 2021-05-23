@@ -35,11 +35,17 @@
     <h4 class="ui header">Deine Daten:</h4>
         SVNR: {{user.svnr}} <br>
         Email: {{ user.email}} <br>
-        Telefon: {{user.telefon}}
-  </div>
-  <span *ngIf= "user.impfung_id">
+        Telefon: {{user.telefon}} <br><br>
+      
+    <span *ngIf= "user.impfung_id">
     <div class="sixteen wide column">
-      <h3 class="ui header">Location</h3>
-      Du bist angemeldet zur Impfung: <br>
+      <h3 class="ui header">Dein Impftermin</h3>
+      Ort:  <br>
+        Email: {{ user.email}} <br>
+        Telefon: {{user.telefon}} <br><br>
+        
+        <br>
     </div>
   </span>
+
+  </div>

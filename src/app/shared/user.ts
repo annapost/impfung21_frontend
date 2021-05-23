@@ -1,3 +1,5 @@
+import { Impfung } from "./impfung";
+export { Impfung } from "./impfung";
 
 export class User {
   constructor (
@@ -15,6 +17,7 @@ export class User {
     public password:string,
     public email_verified_at?:Date,
     public telefon?:string,
-    public impfung_id?:number
+    public impfung_id?:number,
+    public impfung?:Impfung,
     ){}
 }
