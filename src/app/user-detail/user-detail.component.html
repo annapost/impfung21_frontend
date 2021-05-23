@@ -13,12 +13,10 @@
       <div class="four wide column">
         <h4 class="ui header">Dein persönlicher Impfstatus: </h4>-->
         
-        <span *ngIf="user.status === 'yes'">
-Gratuliere! Du bist geimpft! Status: {{user.status}}
-<span *ngIf= "user.status === 'no'">
- Du kannst dich noch für eine Impfung anmelden! Status: {{user.status}}</span>
-         </span>
 
+<div *ngIf="user.status === 'n'; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>Du kannst dich noch für eine Impfung anmelden! Status: NO.</ng-template>
+<ng-template #elseBlock>YES.</ng-template>
 
       </div>
       <div class="four wide column">
