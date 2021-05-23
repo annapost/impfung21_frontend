@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: []
 })
 export class UserDetailComponent implements OnInit {
-  @Input() user: User;
+  user: User;
 
   constructor(
     private im: ImpfSystemService,
@@ -19,7 +19,7 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     const params = this.route.snapshot.params; //aktuelle Route wird geholt, 
-    this.im.getSingle(params['id']).subscribe(
+    this.im.getUs(params['id']).subscribe(
       res => this.user = res);
   }
 
