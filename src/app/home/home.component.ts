@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Impfung } from '../shared/impfort';
 
 @Component({
   selector: 'im-home',
-  template: `<div class="ui container">
-  <h1>Willkommen im Impfsystem von KWM</h1>
-  <p>Such dir nach dem Login deinen Impfort</p>
-  <a routerLink='../impfungen/' class='ui teal button'>Impfliste anzeigen</a><br>
-  LOGIN HIER EINBAUEN statt Button oben!
-  </div> `,
+  templateUrl: './home.component.html', 
   styleUrls: []
 })
 export class HomeComponent implements OnInit {
+  
 
   constructor() { }
 
