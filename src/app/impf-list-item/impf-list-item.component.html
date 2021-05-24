@@ -1,6 +1,7 @@
 <div class="ui grid">
-<div class="content">
+  <div class="content">
 
+    <div class="six wide column">
       <div class="header">
         <span class="ui medium header">{{impfung.impfort.ort}}</span>
         <br>
@@ -8,21 +9,24 @@
         Von {{impfung.uhrzeit_start}} bis
         {{impfung.uhrzeit_end}}
       </div>
-</div>
 
-    <div class="metadata">
 
-      Angemeldet:
-      {{impfung.users.length}} Person(en)
-      <br>
+      <div class="metadata">
+        Angemeldet:
+        {{impfung.users.length}} Person(en)
+        <br>
+      </div>
+
+      <div class="extra">
+        Maximale Anzahl: {{ impfung.max_personen }}
+      </div>
     </div>
 
-
-    <div class="extra">Maximale Anzahl: {{ impfung.max_personen }}
+    <div class="four wide column">
+      <!--(click)="signToImpfung()"-->
+          <button  class="ui teal button"> 
+          Anmelden
+          </button>
+    </div>
   </div>
-
-    <button (click)="signToImpfung()" class="ui red labeled icon button"> 
-    <i class="remove icon"></i>
-    Anmelden
-    </button>
-  </div>
+</div>
