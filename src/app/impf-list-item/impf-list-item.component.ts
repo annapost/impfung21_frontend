@@ -22,7 +22,7 @@ export class ImpfListItemComponent implements OnInit {
 
   signToImpfung(){
     if (confirm('Wirklich zu dieser Impfung anmelden?')) {
-      this.im.addUser(this.impfung.id)
+      this.im.addUser(this.user.id)
       .subscribe(res => this.router.navigate(['../'], 
       { 
         relativeTo: this.route 
