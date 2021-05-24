@@ -15,7 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ImpfFormComponent } from './impf-form/impf-form.component';
-import { AdminHomeComponent } from './admin-home/admin-home.component';
+
 
 @NgModule({
   imports:      [ 
@@ -27,7 +27,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
   declarations: [ 
     AppComponent, 
     HelloComponent, 
-    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent, AdminHomeComponent 
+    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent
     ],
   bootstrap:    [ AppComponent ],
   providers: [ImpfSystemService]
