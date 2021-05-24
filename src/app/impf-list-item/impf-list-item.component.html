@@ -1,4 +1,6 @@
+<div class="ui grid">
 <div class="content">
+
       <div class="header">
         <span class="ui medium header">{{impfung.impfort.ort}}</span>
         <br>
@@ -17,4 +19,10 @@
 
 
     <div class="extra">Maximale Anzahl: {{ impfung.max_personen }}
+  </div>
+
+    <button (click)="signToImpfung()" class="ui red labeled icon button"> 
+    <i class="remove icon"></i>
+    Anmelden
+    </button>
   </div>
