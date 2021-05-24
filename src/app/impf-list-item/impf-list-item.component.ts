@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ImpfSystemService } from '../shared/impf-system.service';
 import {Impfung} from "../shared/impfung";
 
 @Component({
@@ -14,4 +16,15 @@ export class ImpfListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  signToImpfung(){
+    if (confirm('Wirklich zu dieser Impfung anmelden?')) {
+      this.im.addUser(this.impfung.id)
+      .subscribe(res => this.router.navigate(['../'], 
+      { 
+        relativeTo: this.route 
+        })); 
+        }
+    }
+  }
 }
