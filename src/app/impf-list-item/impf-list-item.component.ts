@@ -19,7 +19,7 @@ export class ImpfListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-
+//TODO - wie speichere ich User und Impfung zusammen??
   signToImpfung(){
     if (confirm('Wirklich zu dieser Impfung anmelden?')) {
       this.im.addUser(this.user.id)
@@ -30,4 +30,6 @@ export class ImpfListItemComponent implements OnInit {
         }
     }
   }
+
+
 }
