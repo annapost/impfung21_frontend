@@ -26,6 +26,11 @@ export class ImpfSystemService {
       pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
 
+    addUser(id:Number):Observable<any>{
+    return this.http.put<User>(`${this.api}/user/${id}`).
+      pipe(retry(3)).pipe(catchError(this.errorHandler));
+  }
+
 
   remove(id:Number):Observable<any>{
     return this.http.delete<Impfung>(`${this.api}/impfung/${id}`).

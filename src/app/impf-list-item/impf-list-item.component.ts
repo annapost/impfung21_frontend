@@ -11,7 +11,10 @@ import {Impfung} from "../shared/impfung";
 export class ImpfListItemComponent implements OnInit {
   @Input() impfung: Impfung
 
-  constructor() { }
+  constructor(
+    private im: ImpfSystemService, 
+    private route: ActivatedRoute, 
+    private router:Router) { }
 
   ngOnInit() {
   }
