@@ -6,9 +6,11 @@
 <div class="ui secondary pointing menu">
 <a routerLink="home" routerLinkActive="active" class="item">Home</a> 
 <a routerLink="impfungen" routerLinkActive="active" class="item">Impfübersicht</a>
-<div class="right menu">
-  <a routerLink="admin" routerLinkActive="active" class="ui item">Administration</a>
-  </div>
+<!--<div *ngIf="isLoggedIn()">-->
+  <div class="right menu">
+    <a routerLink="admin" routerLinkActive="active" class="ui item">Administration</a>
+    </div>
+  <!--</div>-->
 </div>
 
 <router-outlet></router-outlet>
