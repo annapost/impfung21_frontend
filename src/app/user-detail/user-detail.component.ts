@@ -36,7 +36,7 @@ export class UserDetailComponent implements OnInit {
   getImpfort($ortId: number){
     this.im.getOrt($ortId).subscribe(
       res => this.impfort = res);
-      console.log();
+      console.log(this.impfort);
     return this.impfort;
   }
 
