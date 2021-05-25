@@ -1,58 +1,40 @@
-
-    <td data-label="Ort">{{impfung.impfort.ort}}</td>
-
-    <td data-label="Datum">{{impfung.datum}}</td>
-
-    <td data-label="Uhrzeit">Von {{impfung.uhrzeit_start}} bis
-      {{impfung.uhrzeit_end}}</td>
-
-    <td data-label="Auslastung">Angemeldet:
-      {{impfung.users.length}}/{{ impfung.max_personen }}</td>
-
-    <td data-label="Anmelden">    
-      <div *ngIf="authService.isLoggedIn() && authService.getImpfId != null" class="six wide column">
-        <button class="ui grey right floated button"  disabled> 
-        Anmelden
-        </button>
-      </div>
-      <div *ngIf="authService.isLoggedIn() && authService.getImpfId == null" class="six wide column">
-        <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
-        Anmelden
-        </button>
-      </div>
-    </td> 
-
-
-
-<!--<div class="ui grid">
+<div class="ui grid">
     <div class="ten wide column">
       <div class="header">
-        <span class="ui medium header">{{impfung.impfort.ort}}</span>
-        <br>
-        <b>Datum: </b> {{impfung.datum}} <br>
-        Von {{impfung.uhrzeit_start}} bis
-        {{impfung.uhrzeit_end}}
-      </div>
+            <span class="ui medium header">{{impfung.impfort.ort}}</span>
+            </div>
+       <div class="ui grid">
+         <div class="six wide column">
+            <br>
+              <b>Datum: </b> {{impfung.datum}} <br>
+              Von {{impfung.uhrzeit_start}} bis
+              {{impfung.uhrzeit_end}}
+            
+          </div>
 
-      <div class="metadata">
-        Angemeldet:
-        {{impfung.users.length}} Person(en)
-        <br>
-      </div>
-      <div class="extra">
-        Maximale Anzahl: {{ impfung.max_personen }}
-      </div>
-    </div>
+          <div class="six wide column">
+            <div class="metadata">
+              Angemeldet:
+              {{impfung.users.length}} Person(en)
+              <br>
+            </div>
+            <div class="extra">
+              Maximale Anzahl: {{ impfung.max_personen }}
+            </div>
+          </div>
 
-    <div *ngIf="authService.isLoggedIn() && authService.getImpfId != null" class="six wide column">
-          <button class="ui grey right floated button"  disabled> 
-          Anmelden
-          </button>
-    </div>
-    <div *ngIf="authService.isLoggedIn() && authService.getImpfId == null" class="six wide column">
-          <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
-          Anmelden
-          </button>
+        <div class="four wide column">
+            <div *ngIf="authService.isLoggedIn() && authService.getImpfId != null" class="six wide column">
+                  <button class="ui grey right floated button"  disabled> 
+                  Anmelden
+                  </button>
+            </div>
+            <div *ngIf="authService.isLoggedIn() && authService.getImpfId == null" class="six wide column">
+                  <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
+                  Anmelden
+                  </button>
+            </div>
+        </div>
     </div>
     
-</div>-->
+</div>
