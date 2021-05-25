@@ -1,6 +1,6 @@
 <div class="ui grid" *ngIf="impfung">
 
-  <div class="twelve wide column">
+  <div class="sixteen wide column">
     <h1 class="ui header">{{impfung.impfort.ort}}</h1>
     <h3 class="ui header">Datum: {{impfung.datum}}</h3>
     <h4 class="ui header">Uhrzeit</h4>
@@ -9,7 +9,7 @@
 
     </div>
     <div class="ui grid">
-      <div class="four wide column">
+      <div class="six wide column">
         <h5 class="ui header">
           <i class="users icon"></i>
           <div class="content"> Angemeldete Personen 
@@ -18,7 +18,7 @@
         </h5>
 
       </div>
-      <div class="eight wide column">
+      <div class="ten wide column">
         <span *ngFor="let user of impfung.users; last as l">
               {{ user.vorname }} {{ user.nachname }} 
               <div class="four wide column">
