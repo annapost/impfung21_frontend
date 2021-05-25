@@ -9,7 +9,7 @@
 <a routerLink="home" routerLinkActive="active" class="item">Home</a> 
 <a routerLink="impfungen" routerLinkActive="active" class="item">Impfübersicht</a>
 
-<div *ngIf="authService.isAdminLoggedIn()" >
+<div *ngIf="authService.isAdminLoggedIn()" class="right menu">
   <a class="right menu" routerLink="admin" routerLinkActive="active" class="ui item">Administration</a>
 </div>
 
