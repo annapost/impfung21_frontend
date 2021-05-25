@@ -17,6 +17,13 @@ export class ImpfSystemService {
       .pipe(catchError(this.errorHandler));
   }
 
+  getOrt(id: number): Observable<Array<Impfort>> {
+    return this.http
+      .get<Array<Impfort>>(`${this.api}/impfort/${id}`)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
   getSingle(id: number): Observable<Impfung> {
     return this.http
       .get<Impfung>(`${this.api}/impfungen/${id}`)

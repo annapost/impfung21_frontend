@@ -11,6 +11,7 @@ import { AuthenticationService } from "../shared/authentication.service";
 })
 export class UserDetailComponent implements OnInit {
   user: User;
+  impfung: Impfung;
 
   constructor(
     private im: ImpfSystemService,
@@ -30,5 +31,7 @@ export class UserDetailComponent implements OnInit {
   findUserWithId(){
     return this.authService.getUserId();
   }
+
+
 
 }
