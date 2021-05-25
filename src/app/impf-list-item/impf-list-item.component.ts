@@ -31,7 +31,5 @@ export class ImpfListItemComponent implements OnInit {
         })); 
         }
     }
-  }
-
-
+  
 }
