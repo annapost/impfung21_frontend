@@ -57,7 +57,8 @@
           {{user.impfung.datum}}<br>
           {{user.impfung.uhrzeit_start}} Uhr <br>
           {{user.impfung.uhrzeit_end}} Uhr <br>
-          {{getImpfort(user.impfung.impfort_id).ort}}  <br><br>
+          {{getImpfort(user.impfung.impfort_id).plz}} {{getImpfort(user.impfung.impfort_id).ort}} | {{getImpfort(user.impfung.impfort_id).strasse}} <br>
+          {{getImpfort(user.impfung.impfort_id).bezeichnung}}<br><br>
         </div>
     </div>
       <br>
