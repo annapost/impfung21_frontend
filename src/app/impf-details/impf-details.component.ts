@@ -43,7 +43,7 @@ constructor(
     }
 
     updateUserState($user) {
-      console.log($user.id);
+      //console.log($user.id);
     if (confirm('Status wirklich ändern?')) {
       this.im.updateUserState($user.id)
       .subscribe(res => this.router.navigate(['./'], 
@@ -53,12 +53,12 @@ constructor(
         }
     }
 
-      signToImpfung($impfung:Impfung){
-    if (confirm('Wirklich zu dieser Impfung anmelden?')) {
+    signToImpfung($impfung:Impfung){
+      if (confirm('Wirklich zu dieser Impfung anmelden?')) {
           let $userId = localStorage.getItem("userId");
           this.im.addUser($userId, $impfung)
           .subscribe(res => 
-          console.log(res),
+          //console.log(res),
           this.router.navigate(['../home'], 
           { 
             relativeTo: this.route 
