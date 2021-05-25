@@ -36,6 +36,7 @@ export class AuthenticationService {
     this.http.post(`${this.api}/logout`, {});
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
+    localStorage.removeItem('rolle');
   }
 
   public isLoggedIn() {
