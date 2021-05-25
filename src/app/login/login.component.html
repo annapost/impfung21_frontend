@@ -23,12 +23,10 @@
        Passwort ist verpflichtend </div>
    </div>
 
-<!--[disabled]="loginForm.invalid"-->
    <button type="submit" [disabled]="loginForm.invalid" routerLink = "/impfungen" class="ui button" >Login</button>
  </form>
 
-<!--*ngIf="isLoggedIn()"-->
+
 <div *ngIf="isLoggedIn()">
-  <!--(click)="logout()""-->
  <button type="button" (click)="logout()" class="ui button">Logout</button>
 </div>
