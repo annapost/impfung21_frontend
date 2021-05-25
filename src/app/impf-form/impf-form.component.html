@@ -7,6 +7,8 @@
   <div class="field">
     <label>Datum</label>
     <input type="date" formControlName="datum">
+      <div *ngIf="errors.datum" class="ui negative message">{{ errors.datum }}
+    </div>
   </div>
 
   <div class="field">
@@ -22,61 +24,66 @@
     <div *ngIf="errors.end" class="ui negative message">{{
       errors.end }}</div>
   </div>
-<div class="ui divider"></div>
+  <div class="ui divider"></div>
 
-<!--UMBAUEN auf einzelne Eingabefelder-->
-  <div class="field">
-    <div class="ui medium header">
-    <label>Impfort:</label>
-    </div>
-      <div class="ui grid">
-        <div class="six wide column">
-          <div class="field">
-            <label>PLZ</label>
-            <input type="number" formControlName="plz">
-            <div *ngIf="errors.plz" class="ui negative message">{{
-              errors.plz }}
-            </div>
-          </div>
-        </div>
-        <div class="ten wide column">
-          <div class="field">
-            <label>Ort</label>
-            <input formControlName="ort">
-            <div *ngIf="errors.ort" class="ui negative message">{{
-              errors.ort }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="field">
-        <label>Straße und Nummer</label>
-        <input formControlName="strasse">
-        <div *ngIf="errors.strasse" class="ui negative message">{{
-          errors.strasse }}
-        </div>
-      </div>
-            <div class="field">
-        <label>Bezeichnung</label>
-        <input formControlName="bezeichnung">
-        <div *ngIf="errors.bezeichnung" class="ui negative message">{{
-          errors.bezeichnung }}
-        </div>
-      </div>
-      
+  <div class="ui medium header">
+  Impfort:
   </div>
+    <div class="ui grid">
+      <div class="six wide column">
+        <div class="field">
+          <label>PLZ</label>
+          <input type="number" formControlName="plz">
+          <div *ngIf="errors.plz" class="ui negative message">{{
+            errors.plz }}
+          </div>
+        </div>
+      </div>
+      <div class="ten wide column">
+        <div class="field">
+          <label>Ort</label>
+          <input formControlName="ort">
+          <div *ngIf="errors.ort" class="ui negative message">{{
+            errors.ort }}
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="ui divider"></div>
+    <div class="field">
+      <label>Straße und Nummer</label>
+      <input formControlName="strasse">
+      <div *ngIf="errors.strasse" class="ui negative message">{{
+        errors.strasse }}
+      </div>
+    </div>
+    <div class="field">
+      <label>Bezeichnung</label>
+      <input formControlName="bezeichnung">
+      <div *ngIf="errors.bezeichnung" class="ui negative message">{{
+        errors.bezeichnung }}
+      </div>
+    </div>
+
+
+    <div class="ui divider"></div>
 
     <div class="field">
       <label>Maximale Personenanzahl</label>
       <input type="number" formControlName="max_personen">
-      <div *ngIf="errors.number" class="ui negative message">{{errors.number}}</div>
-    </div>
-    <div class="fields" *ngIf="impfung.users.length > 0">Es gibt bereits {{impfung.users.length}} angemeldete Personen!
+      <div *ngIf="errors.max_personen" class="ui negative message">{{errors.max_personen}}
+      </div>
 
+      <div *ngIf="impfung.users.length > 0">
+        <span class="ui red">
+          Es gibt bereits {{impfung.users.length}} angemeldete Personen!
+        </span>
+      </div>
     </div>
+    
 
+
+    <br>
     <button type="submit" class="ui button"
   [disabled]="impfForm.invalid">Speichern</button>
 
