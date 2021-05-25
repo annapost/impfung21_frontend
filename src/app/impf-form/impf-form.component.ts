@@ -18,6 +18,7 @@ import { Impfort } from '../shared/impfort';
 export class ImpfFormComponent implements OnInit {
   impfForm: FormGroup;
   impfung = ImpfFactory.empty();
+  impfort = ImpfFactory.empty();
   //unterscheidung, ob ich bereits ein Buch habe, oder eines neu anlegen will
   isUpdatingImpfung = false;
   errors: { [key: string]: string } = {};
@@ -37,6 +38,7 @@ export class ImpfFormComponent implements OnInit {
       this.isUpdatingImpfung = true;
       this.bs.getSingle(id).subscribe(impfung => {
         this.impfung = impfung;
+        this.impfort = impfung.impfort;
         this.initImpfung();
         
       });
@@ -61,7 +63,11 @@ export class ImpfFormComponent implements OnInit {
     impforte: Validators.required,
     max_personen: [
       Validators.required,
-      Validators.min(this.impfung.users.length),]
+      Validators.min(this.impfung.users.length),],
+    plz: Validators.required,
+    strasse: Validators.required,
+    ort: Validators.required,
+    bezeichnung: Validators.required
   });
   //validator immer aktuell halten:
   this.impfForm.statusChanges.subscribe(() => {
