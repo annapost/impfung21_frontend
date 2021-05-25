@@ -1,12 +1,23 @@
-  <div class="ui container">
-  <h1>Willkommen im Impfsystem von KWM</h1>
-  <p>Melde dich nach dem Login für die Impfung deiner Wahl an!</p>
+<div class="ui container">
+<h1>Willkommen im Impfsystem von KWM</h1>
+<p>Einfach registrieren und zur Impfung anmelden!</p>
+  <div class="ui placeholder segment">
+  <div class="ui two column stackable center aligned grid">
+    <div class="ui vertical divider">Or</div>
+    <div class="middle aligned row">
+      <div class="column">
+        <div class="ui icon header">
+          <i class="heart outline icon"></i>
+          Unsere Impfangebote
+        </div>
+        <a routerLink='../impfungen/' class='ui teal button'>Zur Impfliste</a>
+      </div>
+
+      <div class="column">
+           <im-login></im-login>
+      </div>
+    </div>
+  </div>
+</div>
   
-  <a routerLink='../impfungen/' class='ui teal button'>Zur Impfliste</a>
-  <br>
-  <br>
-  <div class="ui divider"> </div>
-
-  <im-login></im-login>
-
   </div>
