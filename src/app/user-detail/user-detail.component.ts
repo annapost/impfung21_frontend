@@ -12,6 +12,7 @@ import { AuthenticationService } from "../shared/authentication.service";
 export class UserDetailComponent implements OnInit {
   user: User;
   impfung: Impfung;
+  impfort: Impfort;
 
   constructor(
     private im: ImpfSystemService,
@@ -32,12 +33,12 @@ export class UserDetailComponent implements OnInit {
     return this.authService.getUserId();
   }
   
-  /*getImpfort($impf: Impfung){
-    this.im.getSingle($impf.id).subscribe(
-      res => this.impfung = res);
-      console.log($impf);
-    return this.impfung.impfort;
-  }*/
+  getImpfort($ortId: umber){
+    this.im.getOrt($ortId).subscribe(
+      res => this.impfort = res);
+      console.log();
+    return this.impfort;
+  }
 
 
 }
