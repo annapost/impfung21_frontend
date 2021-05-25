@@ -53,9 +53,9 @@ export class ImpfSystemService {
       .pipe(catchError(this.errorHandler));
   }
 
-  updateUser(user:User):Observable<any>{
+  updateUser(id:Number):Observable<any>{
   return this.http
-    .put(`${this.api}/user/${user.id}`, user)
+    .put(`${this.api}/user/${id}`, id)
     .pipe(retry(3))
     .pipe(catchError(this.errorHandler));
   }

@@ -31,6 +31,7 @@
         <span *ngFor="let user of impfung.users; last as l; index as i">
               {{ user.vorname }} {{ user.nachname }} 
                   - Impfstatus:
+
             <div *ngIf="user.status == 'yes'; then yesState else noState"></div>
                 <ng-template #yesState>
                   <div class="ui toggle checkbox">
@@ -45,7 +46,6 @@
                   <label for="i"></label>
                   </div>
                 </ng-template>
-
           <br>
               
         <span *ngIf="!l"><br></span>

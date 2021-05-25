@@ -41,6 +41,7 @@ constructor(
     }
 
     updateUserState($id) {
+      console.log($id);
     if (confirm('Status wirklich ändern?')) {
       this.im.updateUser($id)
       .subscribe(res => this.router.navigate(['./'], 
