@@ -22,26 +22,53 @@
     <div *ngIf="errors.end" class="ui negative message">{{
       errors.end }}</div>
   </div>
+<div class="ui divider"></div>
 
 <!--UMBAUEN auf einzelne Eingabefelder-->
   <div class="field">
-    <label>Impforte</label>
+    <h3 class="ui header">
+    <label class="ui header">Impfort:</label>
+    </h3>
     <div formArrayName="impforte">
-      <div class="ui selection dropdown">
-        <input type="hidden" name="control">
-        <i class="dropdown icon"></i>
-        <div class="default text">Hier auswählen</div>
-      <div class="fields" *ngFor="let control of impforte?.controls; index as i; last as l" [formGroupName]="i">
-        <input type="hidden" name="id">
-          <div class="menu">
-
-            <!--<option class="item" data-value="i+1">{{control.ort}}</option>-->
+      <div class="ui grid">
+        <div class="six wide column">
+          <div class="field">
+            <label>PLZ</label>
+            <input type="number" formControlName="plz">
+            <div *ngIf="errors.plz" class="ui negative message">{{
+              errors.plz }}
+            </div>
+          </div>
+        </div>
+        <div class="ten wide column">
+          <div class="field">
+            <label>Ort</label>
+            <input formControlName="ort">
+            <div *ngIf="errors.ort" class="ui negative message">{{
+              errors.ort }}
+            </div>
           </div>
         </div>
       </div>
+      <div class="field">
+        <label>Straße und Nummer</label>
+        <input formControlName="strasse">
+        <div *ngIf="errors.strasse" class="ui negative message">{{
+          errors.strasse }}
+        </div>
+      </div>
+            <div class="field">
+        <label>Bezeichnung</label>
+        <input formControlName="bezeichnung">
+        <div *ngIf="errors.bezeichnung" class="ui negative message">{{
+          errors.bezeichnung }}
+        </div>
+      </div>
+      
     </div>
   </div>
 
+<div class="ui divider"></div>
 
     <div class="field">
       <label>Maximale Personenanzahl</label>
