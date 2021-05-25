@@ -27,7 +27,7 @@ export class ImpfFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private bs: ImpfSystemService,
+    private im: ImpfSystemService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -36,7 +36,7 @@ export class ImpfFormComponent implements OnInit {
     const id = this.route.snapshot.params["id"];
     if (id) {
       this.isUpdatingImpfung = true;
-      this.bs.getSingle(id).subscribe(impfung => {
+      this.im.getSingle(id).subscribe(impfung => {
         this.impfung = impfung;
         this.impfort = impfung.impfort;
         this.initImpfung();
@@ -105,20 +105,22 @@ export class ImpfFormComponent implements OnInit {
     //in unserer Lösung ein Hack:
     //just a hack - did not care about authors
     //damit sie beim speichern trdm wieder da sind:
+
     //TODO - impfort change etc. beachten
     //updatedimpfung.authors = this.impfung.authors;
     //updatedimpfung.user_id = 1; //hack
 
     if (this.isUpdatingImpfung) {
-      this.bs.update(updatedImpfung).subscribe(res => {
+      this.im.update(updatedImpfung).subscribe(res => {
         this.router.navigate(["../../impfungen", updatedImpfung.id], {
           relativeTo: this.route
         });
       }, (err)=>{
         //TODO sinnvolle Fehlermeldung -> irgendwas mit Promises -> für Fehlermeldungen vom Server?/Client?
+
       });
     } else {
-      this.bs.create(updatedImpfung).subscribe(res => {
+      this.im.create(updatedImpfung).subscribe(res => {
         this.router.navigate(["../impfungen"], { relativeTo: this.route });
       });
     }
