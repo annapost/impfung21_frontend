@@ -73,7 +73,7 @@ export class AuthenticationService {
         localStorage.removeitem('rolle')
         return false;
       }
-      return true; // noch nicht abgelaufen
+      return true;
     }
     return false;
   }
