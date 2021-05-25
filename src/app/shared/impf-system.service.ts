@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -28,7 +29,7 @@ export class ImpfSystemService {
 
 //add User to Impfung
 
-    addUser($userId:Number, $impfung:Impfung):Observable<any>{
+    addUser($userId:string, $impfung:Impfung):Observable<any>{
     return this.http.put<User>(`${this.api}/user/impfung/${$userId}`, $impfung).
       pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
