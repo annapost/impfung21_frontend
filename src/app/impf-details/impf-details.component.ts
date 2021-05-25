@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../shared/authentication.service';
 import { ImpfFactory } from '../shared/impf-factory';
 import { ImpfSystemService } from '../shared/impf-system.service';
 import {Impfung} from "../shared/impfung";
@@ -18,7 +19,8 @@ export class ImpfDetailsComponent{
 constructor(
     private im: ImpfSystemService, 
     private route: ActivatedRoute, 
-    private router:Router) { }
+    private router:Router,
+    public authService: AuthenticationService) { }
   
   showImpfungList(){
     this.showListEvent.emit();
@@ -40,10 +42,10 @@ constructor(
         }
     }
 
-    updateUserState($id) {
-      console.log($id);
+    updateUserState($user) {
+      console.log($user.id);
     if (confirm('Status wirklich ändern?')) {
-      this.im.updateUser($id)
+      this.im.updateUserState($user.id)
       .subscribe(res => this.router.navigate(['./'], 
       { 
         relativeTo: this.route 

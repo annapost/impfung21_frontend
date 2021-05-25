@@ -35,14 +35,14 @@
             <div *ngIf="user.status == 'yes'; then yesState else noState"></div>
                 <ng-template #yesState>
                   <div class="ui toggle checkbox">
-                  <input (click)="updateUserState(user.id)" type="checkbox checked" id="i" >
+                  <input (click)="updateUserState(user)" type="checkbox checked" id="i" >
                   <label for="i"></label>
                   </div>
                 </ng-template>
 
                 <ng-template #noState>
                   <div class="ui toggle checkbox">
-                  <input (click)="updateUserState(user.id)" type="checkbox" id="i" >
+                  <input (click)="updateUserState(user)" type="checkbox" id="i" >
                   <label for="i"></label>
                   </div>
                 </ng-template>

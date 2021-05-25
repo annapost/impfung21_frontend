@@ -60,6 +60,13 @@ export class ImpfSystemService {
     .pipe(catchError(this.errorHandler));
   }
 
+    updateUserState(id:Number):Observable<any>{
+  return this.http
+    .put(`${this.api}/user/state/${id}`, id)
+    .pipe(retry(3))
+    .pipe(catchError(this.errorHandler));
+  }
+
 
   private errorHandler(error: Error | any): Observable<any> { 
     return throwError(error);
