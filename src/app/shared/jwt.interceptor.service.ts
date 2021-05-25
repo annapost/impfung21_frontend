@@ -3,7 +3,6 @@ import {
  HttpResponse
 } from "@angular/common/http";
 
-
 import {Injectable} from "@angular/core";
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
@@ -19,7 +18,6 @@ export class JwtInterceptorService
 
    return next.handle(request).pipe(tap((event: HttpEvent<any>) => {
      if (event instanceof HttpResponse) {
-       // do stuff with response if you want
      }
 
    }, (err: any) => {
