@@ -60,14 +60,13 @@ export class ImpfFormComponent implements OnInit {
     uhrzeit_end: [
       this.impfung.uhrzeit_end, 
       Validators.required],
-    impforte: Validators.required,
     max_personen: [
       Validators.required,
       Validators.min(this.impfung.users.length),],
-    plz: Validators.required,
-    strasse: Validators.required,
-    ort: Validators.required,
-    bezeichnung: Validators.required
+    plz: [this.impfung.impfort.plz, Validators.required],
+    strasse: [this.impfung.impfort.strasse, Validators.required],
+    ort: [this.impfung.impfort.ort, Validators.required],
+    bezeichnung: [this.impfung.impfort.bezeichnung, Validators.required]
   });
   //validator immer aktuell halten:
   this.impfForm.statusChanges.subscribe(() => {

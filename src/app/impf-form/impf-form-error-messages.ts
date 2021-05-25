@@ -8,27 +8,33 @@ export class ErrorMessage {
 export const ImpfFormErrorMessages = [
   new ErrorMessage("datum", "required", "Ein Datum muss angegeben werden")
   
-  /*new ErrorMessage("isbn", "required", "Es muss eine ISBN angegeben werden"),
+  /*new ErrorMessage(
+    "uhrzeit_start", 
+    "required", 
+    "Es muss eine Startuhrzeit angegeben werden"),
+  
   new ErrorMessage(
-    "isbn",
-    "minlength",
-    "Die ISBN muss mindestens 10 Zeichen enthalten"
+    "uhrzeit_end", 
+    "required", 
+    "Es muss eine Enduhrzeit angegeben werden"),
   ),
   new ErrorMessage(
-    "isbn",
-    "maxlength",
-    "Eine ISBN darf höchstens 13 Zeichen haben"
-  ),
-  new ErrorMessage(
-    "published",
+    "plz",
     "required",
-    "Es muss ein Erscheinungsdatum angegeben werden"
+    "Es muss eine PLZ angegeben werden"
   ),
-  new ErrorMessage("authors", "required", "Es muss ein Autor angegeben werden"),
   new ErrorMessage(
-    "rating",
-    "min",
-    "Bewertung kann nur positive Werte annehmen"
+    "ort", 
+    "required", 
+    "Es muss ein Ort angegeben werden"
   ),
-  new ErrorMessage("rating", "max", "Maximal 10 Sterne erlaubt")*/
+  new ErrorMessage(
+    "strasse",
+    "required",
+    "Es muss eine Strasse mit Nummer angegeben werden"
+  ),
+  new ErrorMessage(
+    "max_personen", 
+    "max", 
+    "Maximal 10 Sterne erlaubt")*/
 ];
