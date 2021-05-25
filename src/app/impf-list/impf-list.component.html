@@ -1,10 +1,28 @@
-<h1>Impfungen 2021</h1>
+<h1>Anstehende Impfungen</h1>
 
-<div class="ui middle aligned selection divided list">
-  <a *ngFor="let impfung of impfungen" class="item im-impf-list-item" [impfung]="impfung" [routerLink]="impfung.id" >
-  </a>
+<!--<div class="ui middle aligned selection divided list">
+    <a *ngFor="let impfung of impfungen" class="item im-impf-list-item" [impfung]="impfung" [routerLink]="impfung.id" >
+    </a>
+
+    <div class="ui large text loader">Einen Moment! Die Daten werden geladen!</div>
+
+    <p *ngIf="impfungen && !impfungen.length">Aktuell gibt es keine eingetragenen Impfungen</p>
+  </div>
+  -->
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Ort</th>
+      <th>Datum</th>
+      <th>Uhrzeit</th>
+      <th>Auslastung</th>
+      <th>Anmelden</th>
+  </tr></thead>
+  <tbody>
+    <tr *ngFor="let impfung of impfungen" class="item im-impf-list-item" [impfung]="impfung" [routerLink]="impfung.id" ></tr>
+
+  </tbody>
+</table>
+
   <div class="ui large text loader">Einen Moment! Die Daten werden geladen!</div>
-
   <p *ngIf="impfungen && !impfungen.length">Aktuell gibt es keine eingetragenen Impfungen</p>
-
-</div>
