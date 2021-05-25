@@ -27,6 +27,7 @@
         </h5>
 
       </div>
+      IF ROLLE == ADMIN!
       <div class="ten wide column">
         <span *ngFor="let user of impfung.users; last as l">
               {{ user.vorname }} {{ user.nachname }} 
@@ -34,7 +35,7 @@
                   TODO- METHODE zum Speichern des Status!! 
                   Geimpft:
                 <div class="ui toggle checkbox">
-                  <input type="checkbox" id="status" >
+                  <input (click)="updateUserState(user.id)" type="checkbox" id="status" >
                   <label for="status"></label>
                   </div>
                 </div> <br>

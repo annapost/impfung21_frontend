@@ -40,4 +40,14 @@ constructor(
         }
     }
 
+    updateUserState($id) {
+    if (confirm('Status wirklich ändern?')) {
+      this.im.updateUser($id)
+      .subscribe(res => this.router.navigate(['./'], 
+      { 
+        relativeTo: this.route 
+        })); 
+        }
+    }
+
 }

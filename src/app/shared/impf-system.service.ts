@@ -46,11 +46,18 @@ export class ImpfSystemService {
       .pipe(catchError(this.errorHandler));
   }
 
-    update(impfung:Impfung):Observable<any>{
-      return this.http
-        .put(`${this.api}/impfung/${impfung.id}`, impfung)
-        .pipe(retry(3))
-        .pipe(catchError(this.errorHandler));
+  update(impfung:Impfung):Observable<any>{
+    return this.http
+      .put(`${this.api}/impfung/${impfung.id}`, impfung)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
+  updateUser(user:User):Observable<any>{
+  return this.http
+    .put(`${this.api}/user/${user.id}`, user)
+    .pipe(retry(3))
+    .pipe(catchError(this.errorHandler));
   }
 
 
