@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ImpfFactory } from '../shared/impf-factory';
 import { ImpfSystemService } from '../shared/impf-system.service';
 import { Impfung } from '../shared/impfung';
-import { Impfort } from '../shared/impfort';
+import { ImpfFormErrorMessages } from "./impf-form-error-messages";
 
 @Component({
   selector: 'im-impf-form',
@@ -71,13 +71,13 @@ export class ImpfFormComponent implements OnInit {
   });
   //validator immer aktuell halten:
   this.impfForm.statusChanges.subscribe(() => {
-    //this.updateErrorMessages();
+    this.updateErrorMessages();
   });
 }
 
-  /*updateErrorMessages() {
+  updateErrorMessages() {
     this.errors = {};
-    for (const message of impfungFormErrorMessages) {
+    for (const message of ImpfFormErrorMessages) {
       const control = this.impfForm.get(message.forControl);
       if (
         control &&
@@ -89,7 +89,7 @@ export class ImpfFormComponent implements OnInit {
         this.errors[message.forControl] = message.text;
       }
     }
-  }*/
+  }
 
   submitForm() {
     console.log(this.impfForm.value);
