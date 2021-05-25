@@ -8,13 +8,14 @@
             <h4 class="ui header">Uhrzeit</h4>
             {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
           </div>
-          <div class="eight wide column">
+          <div *ngIf="authService.isLoggedIn()" class="eight wide column">
               <button  class="ui teal right floated button"> 
               Anmelden
               </button>
           </div>
     </div>
 
+<div *ngIf="authService.isAdminLoggedIn()">
     <div class="ui divider">
     </div>
     <div class="ui grid">
@@ -26,7 +27,7 @@
         </h5>
       </div>
 
-      IF ROLLE == ADMIN!
+      
       <div class="ten wide column">
         <span *ngFor="let user of impfung.users; last as l; index as i">
               {{ user.vorname }} {{ user.nachname }} 
@@ -47,9 +48,12 @@
                   </div>
                 </ng-template>
           <br>
+          
               
         <span *ngIf="!l"><br></span>
         </span>
+
+      </div>
       </div>
 
 
@@ -71,11 +75,11 @@
   <button [routerLink]="'/impfungen'" (click)="showImpfungList()" class="ui teal button">Zurück zur Übersicht</button>
 
 
-  <a class="ui yellow labeled icon button" [routerLink]="['../../admin', impfung?.id]">
+  <a *ngIf="authService.isAdminLoggedIn()" class="ui yellow labeled icon button" [routerLink]="['../../admin', impfung?.id]">
     <i class="write icon"></i> Impfung bearbeiten
   </a>
 
-  <button (click)="removeImpfung()" class="ui red labeled icon button"> 
+  <button *ngIf="authService.isAdminLoggedIn()" (click)="removeImpfung()" class="ui red labeled icon button"> 
     <i class="remove icon"></i>
     Impfung löschen
     </button>
