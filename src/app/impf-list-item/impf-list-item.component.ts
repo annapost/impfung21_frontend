@@ -21,10 +21,10 @@ export class ImpfListItemComponent implements OnInit {
 
 //TODO - wie speichere ich User und Impfung zusammen?? - ImpfId übergeben??
 
-  signToImpfung($impfId:Number){
+  signToImpfung($impfung:Impfung){
     if (confirm('Wirklich zu dieser Impfung anmelden?')) {
       let $userId = localStorage.getiitem("userId");
-      this.im.addUser($userId, $impfId)
+      this.im.addUser($userId, $impfung)
       .subscribe(res => this.router.navigate(['../'], 
       { 
         relativeTo: this.route 

@@ -28,8 +28,8 @@ export class ImpfSystemService {
 
 //add User to Impfung
 
-    addUser($userId:Number, $impfId:Number):Observable<any>{
-    return this.http.put<User>(`${this.api}/user/impfung/${$userId}`, $impfId).
+    addUser($userId:Number, $impfung:Impfung):Observable<any>{
+    return this.http.put<User>(`${this.api}/user/impfung/${$userId}`, $impfung).
       pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
 
