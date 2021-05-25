@@ -7,6 +7,7 @@ interface Token {
   user: {
     id: string;
     rolle: string;
+    impfung_id: string;
   };
 }
 
@@ -30,6 +31,7 @@ export class AuthenticationService {
     const decodedToken = jwt_decode(token) as Token;
     localStorage.setItem('userId', decodedToken.user.id);
     localStorage.setItem('rolle', decodedToken.user.rolle);
+    localStorage.setItem('impfung_id', decodedToken.user.impfung_id);
   }
 
   public logout() {
@@ -37,6 +39,7 @@ export class AuthenticationService {
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
     localStorage.removeItem('rolle');
+    localStorage.removeItem('impfung_id');
   }
 
   public isLoggedIn() {
@@ -52,6 +55,8 @@ export class AuthenticationService {
         localStorage.removeItem('token');
         localStorage.removeItem('userId');
         localStorage.removeitem('rolle');
+        localStorage.removeitem('impfung_id');
+
         return false;
       }
       return true; // noch nicht abgelaufen
@@ -60,8 +65,10 @@ export class AuthenticationService {
   }
 
   public isAdminLoggedIn() {
-  
-    if (localStorage.getItem('token') && localStorage.getItem('rolle') == "admin") {
+    if (
+      localStorage.getItem('token') &&
+      localStorage.getItem('rolle') == 'admin'
+    ) {
       let token = localStorage.getItem('token');
       const decodedToken = jwt_decode(token) as Token;
       let expirationDate: Date = new Date(0);
@@ -71,7 +78,8 @@ export class AuthenticationService {
         console.log('Token expired');
         localStorage.removeItem('token');
         localStorage.removeItem('userId');
-        localStorage.removeitem('rolle')
+        localStorage.removeitem('rolle');
+        localStorage.removeitem('impfung_id');
         return false;
       }
       return true;

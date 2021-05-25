@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ImpfFactory } from '../shared/impf-factory';
 import { ImpfSystemService } from '../shared/impf-system.service';
 import { Impfung } from '../shared/impfung';
+import { Impfort } from '../shared/impfort';
 import { ImpfFormErrorMessages } from "./impf-form-error-messages";
 
 @Component({
@@ -100,6 +101,7 @@ export class ImpfFormComponent implements OnInit {
     );*/
 
     const updatedImpfung: Impfung = ImpfFactory.fromObject(this.impfForm.value);
+    const impfOrt: Impfort = ImpfFactory.fromObject(this.impfForm.value);
     console.log(updatedImpfung);
 
     //in unserer Lösung ein Hack:
@@ -111,6 +113,10 @@ export class ImpfFormComponent implements OnInit {
     //updatedimpfung.user_id = 1; //hack
 
     if (this.isUpdatingImpfung) {
+      this.im.createOrt(impfOrt).subscribe(res => {
+        this.router.navigate(["../../impfungen", impfOrt.id], {
+          relativeTo: this.route
+        });
       this.im.update(updatedImpfung).subscribe(res => {
         this.router.navigate(["../../impfungen", updatedImpfung.id], {
           relativeTo: this.route

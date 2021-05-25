@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../shared/authentication.service';
 import { ImpfSystemService } from '../shared/impf-system.service';
 import {Impfung} from "../shared/impfung";
 
@@ -14,12 +15,11 @@ export class ImpfListItemComponent implements OnInit {
   constructor(
     private im: ImpfSystemService, 
     private route: ActivatedRoute, 
-    private router:Router) { }
+    private router:Router,
+    public authService: AuthenticationService) { }
 
   ngOnInit() {
   }
-
-//TODO - wie speichere ich User und Impfung zusammen?? - ImpfId übergeben??
 
   signToImpfung($impfung:Impfung){
     if (confirm('Wirklich zu dieser Impfung anmelden?')) {

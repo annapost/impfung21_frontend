@@ -21,8 +21,7 @@
     
 
     <div class="six wide column">
-      <!--(click)="signToImpfung()"-->
-          <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
+          <button *ngIf="authService.isLoggedIn()" (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
           Anmelden
           </button>
     </div>

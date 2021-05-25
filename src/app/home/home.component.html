@@ -10,6 +10,7 @@
           <i class="heart outline icon"></i>
           Unsere Impfangebote
         </div>
+        <p>Registrier dich, log dich ein und melde dich gleich bequem zur nächsten Impfung an.</p>
         <a routerLink='../impfungen/' class='ui teal button'>Zur Impfliste</a>
       </div>
 
@@ -19,5 +20,10 @@
     </div>
   </div>
 </div>
-  
-  </div>
+
+<!--IMPFUNG_ID aus authservice-->
+<div *ngIf="authService.isLoggedIn()">
+  <im-user-detail></im-user-detail>
+</div>
+
+</div>
