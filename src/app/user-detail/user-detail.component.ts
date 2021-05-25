@@ -26,7 +26,7 @@ export class UserDetailComponent implements OnInit {
     let $uid = Number(this.findUserWithId());
     this.im.getUser($uid).subscribe(
       res => this.user = res);
-      console.log(this.user);
+      //console.log(this.user);
   }
 
   findUserWithId(){
@@ -36,7 +36,7 @@ export class UserDetailComponent implements OnInit {
   getImpfort($ortId: number){
     this.im.getOrt($ortId).subscribe(
       res => this.impfort = res);
-      console.log(this.impfort);
+      //console.log(this.impfort);
     return this.impfort;
   }
 

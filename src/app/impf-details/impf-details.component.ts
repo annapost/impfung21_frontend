@@ -55,15 +55,15 @@ constructor(
 
     signToImpfung($impfung:Impfung){
       if (confirm('Wirklich zu dieser Impfung anmelden?')) {
-          let $userId = localStorage.getItem("userId");
-          this.im.addUser($userId, $impfung)
-          .subscribe(res => 
-          //console.log(res),
-          this.router.navigate(['../home'], 
-          { 
-            relativeTo: this.route 
-            }));
-          }
+        let $userId = localStorage.getItem("userId");
+        this.im.addUser($userId, $impfung)
+        .subscribe(res => 
+        //console.log(res),
+        this.router.navigate(['../home'], 
+        { 
+          relativeTo: this.route 
+          }));
+        }
   }
 
 }
