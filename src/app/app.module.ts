@@ -19,6 +19,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './shared/authentication.service';
 import { TokenInterceptorService } from './shared/token-interceptor.service';
+import { JwtInterceptorService } from './shared/jwt.interceptor.service';
 
 
 @NgModule({
@@ -34,6 +35,17 @@ import { TokenInterceptorService } from './shared/token-interceptor.service';
     ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent, AdminHomeComponent, LoginComponent,
     ],
   bootstrap:    [ AppComponent ],
-  providers: [ImpfSystemService, AuthenticationService, TokenInterceptorService]
+  providers: [ImpfSystemService, AuthenticationService, TokenInterceptorService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true,
+    },  
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptorService,
+    multi: true,
+  },
+  ]
 })
 export class AppModule { }
