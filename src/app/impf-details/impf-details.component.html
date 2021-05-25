@@ -80,12 +80,11 @@
   <button [routerLink]="'/impfungen'" (click)="showImpfungList()" class="ui teal button">Zurück zur Übersicht</button>
 
 
-  <a *ngIf="authService.isAdminLoggedIn()" class="ui yellow labeled icon button" [routerLink]="['../../admin', impfung?.id]">
-    <i class="write icon"></i> Impfung bearbeiten
+  <a *ngIf="authService.isAdminLoggedIn()" class="ui grey button" [routerLink]="['../../admin', impfung?.id]">
+    Impfung bearbeiten
   </a>
 
-  <button *ngIf="authService.isAdminLoggedIn()" (click)="removeImpfung()" class="ui red labeled icon button"> 
-    <i class="remove icon"></i>
+  <button *ngIf="authService.isAdminLoggedIn()" (click)="removeImpfung()" class="ui red button"> 
     Impfung löschen
     </button>
 
