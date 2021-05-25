@@ -6,6 +6,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ImpfFormComponent } from './impf-form/impf-form.component'; 
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 { path: 'admin', component: AdminHomeComponent }, //neuanlage Impfunugen//neuanlage Impfunugen
 { path: 'admin/new', component: ImpfFormComponent }, //neuanlage Impfunugen//neuanlage Impfunugen
 { path: 'admin/:id', component: ImpfFormComponent }, //bearbeiten von Impfungen
+{ path: 'login', component: LoginComponent },
 ];
 
 
