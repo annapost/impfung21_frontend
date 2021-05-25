@@ -31,12 +31,7 @@ export class AuthenticationService {
     const decodedToken = jwt_decode(token) as Token;
     localStorage.setItem('userId', decodedToken.user.id);
     localStorage.setItem('rolle', decodedToken.user.rolle);
-    
-    /*if(decodedToken.user.impfung_id == null){
-      localStorage.setItem('impfung_id', null)
-    } else if (decodedToken.user.impfung_id != null){
-      localStorage.setItem('impfung_id', decodedToken.user.impfung_id);
-    }*/
+    localStorage.setItem('impfung_id', decodedToken.user.impfung_id);
   }
 
   public logout() {
