@@ -8,9 +8,8 @@
       <div class="column">
         <div class="ui icon header">
           <i class="heart outline icon"></i>
-          Unsere Impfangebote
+          Unsere Impfangebote für dich
         </div>
-        <p>Registrier dich, log dich ein und melde dich gleich bequem zur nächsten Impfung an.</p>
         <a routerLink='../impfungen/' class='ui teal button'>Zur Impfliste</a>
       </div>
 
@@ -20,10 +19,12 @@
     </div>
   </div>
 </div>
+<br>
 
 <!--IMPFUNG_ID aus authservice-->
-<div *ngIf="authService.isLoggedIn()">
+<div *ngIf="authService.isLoggedIn()" class="">
   <im-user-detail></im-user-detail>
+  <br>
 </div>
 
 </div>

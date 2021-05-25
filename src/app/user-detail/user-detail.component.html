@@ -1,9 +1,8 @@
-<h1>Personenstatus</h1>
-
+<h1 *ngIf="authService.getUserId()" class="ui header">Personenstatus</h1>
 
 <div class="ui segment" *ngIf="authService.getUserId()">
   <div class="eight wide column">
-    <h1 class="ui header">{{ user.vorname }} {{ user.nachname }}</h1>
+    <h2 class="ui medium header">{{ user.vorname }} {{ user.nachname }}</h2>
     <div class="ui divider"></div>
 
     <div class="ui grid">
@@ -31,21 +30,37 @@
     </div>
     
     <h4 class="ui header">Deine Daten:</h4>
-        SVNR: {{user.svnr}} <br>
-        Email: {{ user.email}} <br>
-        Telefon: {{user.telefon}} <br><br>
+    <div class="ui grid">
+      <div class="four wide column">
+        SVNR:  <br>
+        Email: <br>
+        Telefon:  <br><br>
+      </div>
+      <div class="ten wide column">
+        {{user.svnr}}<br>
+        {{ user.email}} <br>
+        {{user.telefon}}
+      </div>
+    </div>
       
     <div class="ui divider"></div>
+    
     <span *ngIf= "user.impfung">
-    <div class="sixteen wide column">
       <h3 class="ui olive header">Dein Impftermin</h3>
-      Datum:  {{user.impfung.datum}}<br>
-      Beginn: {{user.impfung.uhrzeit_start}} Uhr<br>
-      Ende: {{user.impfung.uhrzeit_end}} Uhr<br>
-        Ort: {{ user.impfung.impfort}} <br>
-      <br>
-        
-        <br>
+      <div class="ui grid">
+        <div class="four wide column">
+          Datum:  <br>
+          Beginn: <br>
+          Ende: <br>
+          Ort: <br>
+        </div>
+        <div class="ten wide column">
+          {{user.impfung.datum}}<br>
+          {{user.impfung.uhrzeit_start}} Uhr <br>
+          {{user.impfung.uhrzeit_end}} Uhr <br>
+          {{ user.impfung.impfort}}  <br><br>
+        </div>
     </div>
+      <br><br>
   </span>
 </div>
