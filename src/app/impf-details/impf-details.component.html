@@ -8,11 +8,16 @@
             <h4 class="ui header">Uhrzeit</h4>
             {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
           </div>
-          <div *ngIf="authService.isLoggedIn()" class="eight wide column">
-              <button  class="ui teal right floated button"> 
+        <div *ngIf="authService.isLoggedIn() && authService.getImpfId != null" class="six wide column">
+              <button class="ui grey right floated button"  disabled> 
               Anmelden
               </button>
-          </div>
+        </div>
+        <div *ngIf="authService.isLoggedIn() && authService.getImpfId == null" class="six wide column">
+              <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
+              Anmelden
+              </button>
+        </div>
     </div>
 
 <div *ngIf="authService.isAdminLoggedIn()">
