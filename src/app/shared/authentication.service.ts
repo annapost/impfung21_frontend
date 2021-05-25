@@ -45,7 +45,7 @@ export class AuthenticationService {
       let token = localStorage.getItem('token');
       const decodedToken = jwt_decode(token) as Token;
       let expirationDate: Date = new Date(0);
-      console.log(expirationDate);
+      //console.log(expirationDate);
       expirationDate.setUTCSeconds(decodedToken.exp);
       if (expirationDate < new Date()) {
         console.log('Token expired');
@@ -60,13 +60,12 @@ export class AuthenticationService {
   }
 
   public isAdminLoggedIn() {
-    console.log("ADMIN??: ");
-    console.log(localStorage.getItem('rolle'));
+  
     if (localStorage.getItem('token') && localStorage.getItem('rolle') == "admin") {
       let token = localStorage.getItem('token');
       const decodedToken = jwt_decode(token) as Token;
       let expirationDate: Date = new Date(0);
-      console.log(expirationDate);
+      //console.log(expirationDate);
       expirationDate.setUTCSeconds(decodedToken.exp);
       if (expirationDate < new Date()) {
         console.log('Token expired');

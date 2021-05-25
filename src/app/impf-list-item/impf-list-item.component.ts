@@ -25,7 +25,9 @@ export class ImpfListItemComponent implements OnInit {
     if (confirm('Wirklich zu dieser Impfung anmelden?')) {
       let $userId = localStorage.getiitem("userId");
       this.im.addUser($userId, $impfung)
-      .subscribe(res => this.router.navigate(['../'], 
+      .subscribe(res => 
+      console.log(res),
+      this.router.navigate(['/'], 
       { 
         relativeTo: this.route 
         })); 
