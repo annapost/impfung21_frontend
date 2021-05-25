@@ -4,15 +4,15 @@
       <h1 class="ui header">{{impfung.impfort.ort}}</h1>
         <div class="ui grid">
           <div class="eight wide column">
-        <h3 class="ui header">Datum: {{impfung.datum}}</h3>
-        <h4 class="ui header">Uhrzeit</h4>
-        {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
-      </div>
-      <div class="eight wide column">
-          <button  class="ui teal right floated button"> 
-          Anmelden
-          </button>
-      </div>
+            <h3 class="ui header">Datum: {{impfung.datum}}</h3>
+            <h4 class="ui header">Uhrzeit</h4>
+            {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
+          </div>
+          <div class="eight wide column">
+              <button  class="ui teal right floated button"> 
+              Anmelden
+              </button>
+          </div>
     </div>
 
     <div class="ui divider">
@@ -21,26 +21,34 @@
       <div class="six wide column">
         <h5 class="ui header">
           <i class="users icon"></i>
-          <div class="content"> Angemeldete Personen 
-
+          <div> Angemeldete Personen 
           </div>
         </h5>
-
       </div>
+
       IF ROLLE == ADMIN!
       <div class="ten wide column">
-        <span *ngFor="let user of impfung.users; last as l">
+        <span *ngFor="let user of impfung.users; last as l, index as i">
               {{ user.vorname }} {{ user.nachname }} 
-              <div class="four wide column">
-                  TODO- METHODE zum Speichern des Status!! 
-                  Geimpft:
-                <div class="ui toggle checkbox">
-                  <input (click)="updateUserState(user.id)" type="checkbox" id="status" >
-                  <label for="status"></label>
+                  - Impfstatus:
+            <div *ngIf="user.status == 'yes'; then yesState else noState"></div>
+                <ng-template #yesState>
+                  <div class="ui toggle checkbox">
+                  <input (click)="updateUserState(user.id)" type="checkbox checked" id="i" >
+                  <label for="i"></label>
                   </div>
-                </div> <br>
+                </ng-template>
+
+                <ng-template #noState>
+                  <div class="ui toggle checkbox">
+                  <input (click)="updateUserState(user.id)" type="checkbox" id="i" >
+                  <label for="i"></label>
+                  </div>
+                </ng-template>
+
+          <br>
               
-              <span *ngIf="!l">,</span>
+        <span *ngIf="!l"><br></span>
         </span>
       </div>
 
@@ -49,6 +57,7 @@
     </div>
   </div>
 
+  <br>
   <div class="sixteen wide column">
     <h3 class="ui header">Location</h3>
     <p>{{impfung.impfort.plz}} {{impfung.impfort.ort}}<br>
