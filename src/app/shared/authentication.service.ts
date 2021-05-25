@@ -50,7 +50,8 @@ export class AuthenticationService {
       if (expirationDate < new Date()) {
         console.log('Token expired');
         localStorage.removeItem('token');
-        localStorage.removeItem('userId'); // so kann ich auf User dann halt keinen Bezug mehr nehmen für zB. neuerlichen Login aufruf
+        localStorage.removeItem('userId');
+        localStorage.removeitem('rolle');
         return false;
       }
       return true; // noch nicht abgelaufen
@@ -59,8 +60,7 @@ export class AuthenticationService {
   }
 
   public isAdminLoggedIn() {
-    if (localStorage.getItem('token')) {
-      //wenn Token gefunden - dann holen wir uns den
+    if (localStorage.getItem('token') && localStorage.getItem('rolle') == "admin") {
       let token = localStorage.getItem('token');
       const decodedToken = jwt_decode(token) as Token;
       let expirationDate: Date = new Date(0);
@@ -69,7 +69,8 @@ export class AuthenticationService {
       if (expirationDate < new Date()) {
         console.log('Token expired');
         localStorage.removeItem('token');
-        localStorage.removeItem('userId'); // so kann ich auf User dann halt keinen Bezug mehr nehmen für zB. neuerlichen Login aufruf
+        localStorage.removeItem('userId');
+        localStorage.removeitem('rolle')
         return false;
       }
       return true; // noch nicht abgelaufen
