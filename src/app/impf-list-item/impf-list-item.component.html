@@ -1,27 +1,27 @@
 
-  <td data-label="Ort">{{impfung.impfort.ort}}</td>
+    <td data-label="Ort">{{impfung.impfort.ort}}</td>
 
-  <td data-label="Datum">{{impfung.datum}}</td>
+    <td data-label="Datum">{{impfung.datum}}</td>
 
-  <td data-label="Uhrzeit">Von {{impfung.uhrzeit_start}} bis
-    {{impfung.uhrzeit_end}}</td>
+    <td data-label="Uhrzeit">Von {{impfung.uhrzeit_start}} bis
+      {{impfung.uhrzeit_end}}</td>
 
-  <td data-label="Auslastung">Angemeldet:
-    {{impfung.users.length}} Person(en) <br> 
-    Maximale Anzahl: {{ impfung.max_personen }}</td>
+    <td data-label="Auslastung">Angemeldet:
+      {{impfung.users.length}}/{{ impfung.max_personen }}</td>
 
-  <td data-label="Anmelden">    
-    <div *ngIf="authService.isLoggedIn() && authService.getImpfId != null" class="six wide column">
-      <button class="ui grey right floated button"  disabled> 
-      Anmelden
-      </button>
-    </div>
-    <div *ngIf="authService.isLoggedIn() && authService.getImpfId == null" class="six wide column">
-      <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
-      Anmelden
-      </button>
-    </div>
-  </td> 
+    <td data-label="Anmelden">    
+      <div *ngIf="authService.isLoggedIn() && authService.getImpfId != null" class="six wide column">
+        <button class="ui grey right floated button"  disabled> 
+        Anmelden
+        </button>
+      </div>
+      <div *ngIf="authService.isLoggedIn() && authService.getImpfId == null" class="six wide column">
+        <button (click)="signToImpfung(impfung)" class="ui teal right floated button"> 
+        Anmelden
+        </button>
+      </div>
+    </td> 
+
 
 
 <!--<div class="ui grid">
