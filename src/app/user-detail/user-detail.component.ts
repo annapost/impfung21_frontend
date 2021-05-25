@@ -31,7 +31,13 @@ export class UserDetailComponent implements OnInit {
   findUserWithId(){
     return this.authService.getUserId();
   }
-
+  
+  getImpfort($impf: Impfung){
+    this.im.getSingle($impf.id).subscribe(
+      res => this.impfung = res);
+      console.log($impf);
+    return this.impfung.impfort;
+  }
 
 
 }

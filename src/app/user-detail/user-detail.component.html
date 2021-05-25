@@ -9,7 +9,7 @@
       <div class="four wide column">
         <h4 class="ui header">Dein Impfstatus: </h4>
       </div>
-      
+
       <div class="six wide column">
         <div *ngIf="user.status === 'no'; then thenBlock else elseBlock"></div>
         <ng-template #thenBlock><span class="ui orange small header">Nicht geimpft! </span></ng-template>
@@ -57,7 +57,7 @@
           {{user.impfung.datum}}<br>
           {{user.impfung.uhrzeit_start}} Uhr <br>
           {{user.impfung.uhrzeit_end}} Uhr <br>
-          {{user.impfung.impfort_id}}  <br><br>
+          {{getImpfort(user.impfung)}}  <br><br>
         </div>
     </div>
       <br>
