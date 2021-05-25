@@ -28,7 +28,7 @@
 
       IF ROLLE == ADMIN!
       <div class="ten wide column">
-        <span *ngFor="let user of impfung.users; last as l, index as i">
+        <span *ngFor="let user of impfung.users; last as l; index as i">
               {{ user.vorname }} {{ user.nachname }} 
                   - Impfstatus:
             <div *ngIf="user.status == 'yes'; then yesState else noState"></div>
