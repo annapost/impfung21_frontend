@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
+//für login
+interface Response{
+  access_token: string;
+}
+
 
 @Component({
   selector: 'im-login',
@@ -8,11 +16,18 @@ import { FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-loginForm : FormGroup;
+  loginForm : FormGroup;
 
-  constructor() { }
+  constructor(private fb:FormBuilder, private router:Router, private authService:AuthenticationService) {
+
+
+  }
 
   ngOnInit() {
+    this.loginForm = this.fb.group({
+      username: ["", Validators.required, Validators.email],
+      password:["", Validators.required]
+    })
   }
 
 
@@ -26,4 +41,14 @@ login(){
       )
     };*/ //das setzt nacher unseren REST call ab, auf den wir und subscriben
   }
+
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
+  }
+
+  logout(){
+    this.authService.logout();
+  }
+  
 }

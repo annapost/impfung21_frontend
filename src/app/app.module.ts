@@ -17,6 +17,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ImpfFormComponent } from './impf-form/impf-form.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './shared/authentication.service';
 
 
 @NgModule({
@@ -32,6 +33,6 @@ import { LoginComponent } from './login/login.component';
     ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent, AdminHomeComponent, LoginComponent,
     ],
   bootstrap:    [ AppComponent ],
-  providers: [ImpfSystemService]
+  providers: [ImpfSystemService, AuthenticationService]
 })
 export class AppModule { }
