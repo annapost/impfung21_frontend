@@ -32,10 +32,10 @@ export class ImpfFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const isbn = this.route.snapshot.params["isbn"];
-    if (isbn) {
+    const id = this.route.snapshot.params["id"];
+    if (id) {
       this.isUpdatingImpfung = true;
-      this.bs.getSingle(isbn).subscribe(impfung => {
+      this.bs.getSingle(id).subscribe(impfung => {
         this.impfung = impfung;
         this.initImpfung();
         
