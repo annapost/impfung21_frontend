@@ -20,6 +20,7 @@ export class ImpfListItemComponent implements OnInit {
   }
 
 //TODO - wie speichere ich User und Impfung zusammen?? - ImpfId übergeben??
+/*
   signToImpfung(){
     if (confirm('Wirklich zu dieser Impfung anmelden?')) {
       this.im.addUser(this.user.id)
@@ -29,7 +30,7 @@ export class ImpfListItemComponent implements OnInit {
         })); 
         }
     }
-  }
+  }*/
 
 
 }
