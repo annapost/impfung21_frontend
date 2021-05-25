@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ImpfFactory } from '../shared/impf-factory';
 import { ImpfSystemService } from '../shared/impf-system.service';
 import {Impfung} from "../shared/impfung";
 
@@ -9,7 +10,9 @@ import {Impfung} from "../shared/impfung";
   styleUrls: []
 })
 export class ImpfDetailsComponent{
-  @Input() impfung: Impfung;
+  impfung:Impfung = ImpfFactory.empty();
+
+  //@Input() impfung: Impfung;
   @Output() showListEvent = new EventEmitter<any>();
 
 constructor(
