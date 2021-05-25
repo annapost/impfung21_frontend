@@ -1,12 +1,21 @@
 <div class="ui grid" *ngIf="impfung">
 
   <div class="sixteen wide column">
-    <h1 class="ui header">{{impfung.impfort.ort}}</h1>
-    <h3 class="ui header">Datum: {{impfung.datum}}</h3>
-    <h4 class="ui header">Uhrzeit</h4>
-    {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
-    <div class="ui divider">
+      <h1 class="ui header">{{impfung.impfort.ort}}</h1>
+        <div class="ui grid">
+          <div class="eight wide column">
+        <h3 class="ui header">Datum: {{impfung.datum}}</h3>
+        <h4 class="ui header">Uhrzeit</h4>
+        {{ impfung.uhrzeit_start}} bis {{impfung.uhrzeit_end}}
+      </div>
+      <div class="eight wide column">
+          <button  class="ui teal right floated button"> 
+          Anmelden
+          </button>
+      </div>
+    </div>
 
+    <div class="ui divider">
     </div>
     <div class="ui grid">
       <div class="six wide column">
