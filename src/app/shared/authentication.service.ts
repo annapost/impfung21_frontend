@@ -31,7 +31,12 @@ export class AuthenticationService {
     const decodedToken = jwt_decode(token) as Token;
     localStorage.setItem('userId', decodedToken.user.id);
     localStorage.setItem('rolle', decodedToken.user.rolle);
-    localStorage.setItem('impfung_id', decodedToken.user.impfung_id);
+    
+    /*if(decodedToken.user.impfung_id == null){
+      localStorage.setItem('impfung_id', null)
+    } else if (decodedToken.user.impfung_id != null){
+      localStorage.setItem('impfung_id', decodedToken.user.impfung_id);
+    }*/
   }
 
   public logout() {
@@ -47,6 +52,7 @@ export class AuthenticationService {
       //wenn Token gefunden - dann holen wir uns den
       let token = localStorage.getItem('token');
       const decodedToken = jwt_decode(token) as Token;
+
       let expirationDate: Date = new Date(0);
       //console.log(expirationDate);
       expirationDate.setUTCSeconds(decodedToken.exp);
