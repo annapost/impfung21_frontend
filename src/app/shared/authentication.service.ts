@@ -90,4 +90,12 @@ export class AuthenticationService {
   isLoggedOut() {
     return !this.isLoggedIn();
   }
+
+  getImpfId() {
+    return localStorage.getItem('impfung_id');
+  }
+
+  getUserId(){
+    return localStorage.getItem('userId');
+  }
 }

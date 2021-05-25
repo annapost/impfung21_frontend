@@ -1,7 +1,7 @@
 <h1>Personenstatus</h1>
 
 
-<div class="ui segment" *ngIf="user">
+<div class="ui segment" *ngIf="authService.getUserId()">
   <div class="eight wide column">
     <h1 class="ui header">{{ user.vorname }} {{ user.nachname }}</h1>
     <div class="ui divider"></div>

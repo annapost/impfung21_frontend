@@ -14,7 +14,7 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'impfungen', component: ImpfListComponent },
 { path: 'impfungen/:id', component: ImpfDetailsComponent },
-{ path: 'user/:id', component: UserDetailComponent },
+//{ path: 'user/:id', component: UserDetailComponent },
 { path: 'admin', component: AdminHomeComponent }, //Admin Home
 { path: 'admin/new', component: ImpfFormComponent }, //neuanlage Impfunugen
 { path: 'admin/:id', component: ImpfFormComponent }, //bearbeiten von Impfungen

@@ -10,6 +10,7 @@ import { ImpfSystemService } from '../shared/impf-system.service';
 import { Impfung } from '../shared/impfung';
 import { Impfort } from '../shared/impfort';
 import { ImpfFormErrorMessages } from "./impf-form-error-messages";
+import { ImpfortFactory } from '../shared/impfort-factory';
 
 @Component({
   selector: 'im-impf-form',
@@ -19,12 +20,12 @@ import { ImpfFormErrorMessages } from "./impf-form-error-messages";
 export class ImpfFormComponent implements OnInit {
   impfForm: FormGroup;
   impfung = ImpfFactory.empty();
-  impfort = ImpfFactory.empty();
-  //unterscheidung, ob ich bereits ein Buch habe, oder eines neu anlegen will
+  impfort = ImpfortFactory.empty();
+  
   isUpdatingImpfung = false;
   errors: { [key: string]: string } = {};
   impforte: FormArray;
-  //impfort-data: SERVICE ANLAGEN getAllOrte();
+  
 
   constructor(
     private fb: FormBuilder,
@@ -48,11 +49,8 @@ export class ImpfFormComponent implements OnInit {
   }
 
   initImpfung() {
-  //this.buildThumbnailsArray();
-  //hier bauen wir unser Formular Model
   this.impfForm = this.fb.group({
     id: this.impfung.id,
-    //formgruppe braucht objekt - wir sagen ihm welche formularfelder dazugehören - Labelnamen aus HTML nehmen
     datum: [this.impfung.datum, Validators.required],
     uhrzeit_start: [
       this.impfung.uhrzeit_start, 
@@ -95,40 +93,27 @@ export class ImpfFormComponent implements OnInit {
   submitForm() {
     console.log(this.impfForm.value);
 
-    //fitlers null values
-   /* this.impfForm.value.images = this.impfForm.value.images.filter(
-      thumbnail => thumbnail.url
-    );*/
-
     const updatedImpfung: Impfung = ImpfFactory.fromObject(this.impfForm.value);
-    const impfOrt: Impfort = ImpfFactory.fromObject(this.impfForm.value);
+    const impfOrt: Impfort = ImpfortFactory.fromObject(this.impfForm.value);
     console.log(updatedImpfung);
 
-    //in unserer Lösung ein Hack:
-    //just a hack - did not care about authors
-    //damit sie beim speichern trdm wieder da sind:
-
-    //TODO - impfort change etc. beachten
-    //updatedimpfung.authors = this.impfung.authors;
-    //updatedimpfung.user_id = 1; //hack
+  
+    updatedImpfung.users = this.impfung.users;
 
     if (this.isUpdatingImpfung) {
       this.im.createOrt(impfOrt).subscribe(res => {
-        this.router.navigate(["../../impfungen", impfOrt.id], {
-          relativeTo: this.route
+        this.im.update(updatedImpfung).subscribe(res => {
+          this.router.navigate(["../../impfungen", impfOrt.id], {
+            relativeTo: this.route
         });
-      this.im.update(updatedImpfung).subscribe(res => {
-        this.router.navigate(["../../impfungen", updatedImpfung.id], {
-          relativeTo: this.route
-        });
-      }, (err)=>{
-        //TODO sinnvolle Fehlermeldung -> irgendwas mit Promises -> für Fehlermeldungen vom Server?/Client?
-
+      });
       });
     } else {
-      this.im.create(updatedImpfung).subscribe(res => {
-        this.router.navigate(["../impfungen"], { relativeTo: this.route });
-      });
+      this.im.createOrt(impfOrt).subscribe(res => {
+        this.im.create(updatedImpfung).subscribe(res => {
+          this.router.navigate(["../impfungen"], { relativeTo: this.route });
+        });
+    });
     }
   }
 
