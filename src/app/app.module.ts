@@ -18,6 +18,7 @@ import { ImpfFormComponent } from './impf-form/impf-form.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './shared/authentication.service';
+import { TokenInterceptorService } from './shared/token-interceptor.service';
 
 
 @NgModule({
@@ -33,6 +34,6 @@ import { AuthenticationService } from './shared/authentication.service';
     ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent, AdminHomeComponent, LoginComponent,
     ],
   bootstrap:    [ AppComponent ],
-  providers: [ImpfSystemService, AuthenticationService]
+  providers: [ImpfSystemService, AuthenticationService, TokenInterceptorService]
 })
 export class AppModule { }
