@@ -33,7 +33,7 @@ export class UserDetailComponent implements OnInit {
     return this.authService.getUserId();
   }
   
-  getImpfort($ortId: umber){
+  getImpfort($ortId: number){
     this.im.getOrt($ortId).subscribe(
       res => this.impfort = res);
       console.log();
