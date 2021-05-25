@@ -14,7 +14,7 @@ export class AppComponent  {
   impfung: Impfung;
 
   constructor(
-    public authService:AuthenticationService;
+    public authService:AuthenticationService,
   ){}
 
   showList(){
