@@ -29,7 +29,7 @@ import { LoginComponent } from './login/login.component';
   declarations: [ 
     AppComponent, 
     HelloComponent, 
-    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent, AdminHomeComponent, LoginComponent
+    ImpfListComponent, ImpfListItemComponent, ImpfDetailsComponent, HomeComponent, UserDetailComponent, ImpfFormComponent, AdminHomeComponent, LoginComponent,
     ],
   bootstrap:    [ AppComponent ],
   providers: [ImpfSystemService]
